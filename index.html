@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zachry Insurance | Life Insurance Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="container nav-container">
+        <div class="logo">
+            Zachry Insurance
+        </div>
+
+        <a href="https://calendly.com/clay-christian-zachry/30min"
+            target="_blank"
+            class="schedule-btn">
+
+                    Schedule My Consultation
+
+        </a>
+    </div>
+</nav>
+
+<header class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="hero-text">
+
+      <span class="eyebrow">
+        Independent Life Insurance Advisor
+      </span>
+
+      <h1>
+        Life Insurance Designed Around
+        Your Family's Future
+      </h1>
+
+      <p>
+        Compare multiple top-rated carriers and receive
+        personalized guidance from Clay Christian Zachry.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#quote" class="primary-btn">
+          Free Policy Review
+        </a>
+    </br>
+    </br>
+    </br>
+
+        <a href="tel:+12105551212"
+           class="secondary-btn">
+          Call Clay Today
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img
+        src="images/clay_zachry.png"
+        alt="Clay Christian Zachry">
+
+    </div>
+
+  </div>
+
+</header>
+
+<section class="trust-bar">
+
+    <div class="container trust-grid">
+
+        <div>
+            ✓ Independent Agent
+        </div>
+
+        <div>
+            ✓ Multiple Carriers
+        </div>
+
+        <div>
+            ✓ Personalized Guidance
+        </div>
+
+        <div>
+            ✓ No Obligation Review
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about">
+
+<div class="container about-grid">
+
+
+
+  <div class="about-content">
+
+    <span class="section-tag">
+      ABOUT CLAY
+    </span>
+
+    <h2>
+      Personal Guidance.
+      Professional Protection.
+    </h2>
+
+    <p>
+      Clay Christian Zachry helps families
+      navigate life insurance decisions with
+      confidence and clarity.
+    </p>
+
+    <p>
+      As an independent insurance advisor,
+      he compares multiple carriers to find
+      coverage that aligns with each client's
+      goals, budget and long-term plans.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+<section class="benefits">
+
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-tag">
+                WHY CLAY ZACHRY
+            </span>
+
+            <h2>
+                Guidance Beyond The Policy
+            </h2>
+        </div>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Carrier Comparison</h3>
+                <p>
+                    Access coverage options from multiple
+                    insurance companies.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Family Protection</h3>
+                <p>
+                    Coverage strategies designed around
+                    your family's future.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Ongoing Support</h3>
+                <p>
+                    Guidance before, during and after
+                    policy selection.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="testimonial">
+
+    <div class="container">
+
+        <blockquote>
+
+            “Clay made the entire process simple and helped us
+            understand options we didn't know existed.”
+
+        </blockquote>
+
+        <span>
+            — Client Testimonial
+        </span>
+
+    </div>
+
+</section>
+
+<section id="quote" class="quote-section">
+
+    <div class="quote-box">
+
+        
+        <span class="section-tag">
+            FREE REVIEW
+        </span>
+
+        
+        <h2>
+            Request Your Complimentary Policy Review
+        </h2>
+
+        <form id="leadForm">
+
+            <input
+                type="text"
+                placeholder="First Name"
+                required>
+
+            <input
+                type="text"
+                placeholder="Last Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="tel"
+                placeholder="Phone Number"
+                required>
+
+            <input
+                type="date"
+                required>
+
+            <label>
+                Do you currently have life insurance?
+            </label>
+
+            <select id="insuranceStatus">
+                <option value="">Select</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <div id="existingFields" class="hidden">
+
+                <input
+                    type="number"
+                    placeholder="Current Monthly Premium">
+
+                <input
+                    type="number"
+                    placeholder="Coverage Amount">
+
+                <input
+                    type="text"
+                    placeholder="Years With Policy">
+
+            </div>
+
+            <label>
+                Preferred Contact Method
+            </label>
+
+            <div class="contact-options">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="contactMethod"
+                        value="call"
+                        checked>
+                    Call Me
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="contactMethod"
+                        value="email">
+                    Email Me
+                </label>
+
+
+
+            </div>
+
+            <div
+                id="scheduleSection"
+                class="hidden">
+
+
+
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Request Review
+
+            </button>
+
+        </form>
+
+        <div
+            id="success"
+            class="success hidden">
+
+            Thank you. Clay will contact you shortly.
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>
+        Zachry Insurance
+    </h3>
+
+    <p>
+        Life Insurance Solutions • Independent Agent
+    </p>
+
+    <p>
+        © 2026 Zachry Insurance
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
