@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zachry Insurance | Life Insurance Solutions</title>
+<link rel="icon" href="./favicon.png" sizes="32x32"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/mortage-calculator.css">
+</head>
+<body>
+<nav>
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+            <img
+                src="images/zachry_insurance_logo_main.png"
+                alt="Zachry Insurance Logo">
+        </a>
+
+        <a href="mortgage-calculator.html"  class="primary-btn">
+            Mortgage Calculator
+        </a>
+        <a href="https://calendly.com/clay-christian-zachry/30min"
+            target="_blank"
+            class="schedule-btn">
+            Schedule My Consultation
+        </a>
+
+    </div>
+</nav><header class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-text">
+
+            <span class="eyebrow">
+                MORTGAGE PROTECTION CALCULATOR
+            </span>
+
+            <h1>
+                How Much Life Insurance
+                Do You Need To Protect
+                Your Mortgage?
+            </h1>
+
+            <p>
+                Calculate a recommended coverage amount
+                based on your mortgage, income and family.
+            </p>
+
+            <a href="#calculator"
+               class="primary-btn">
+                Calculate Coverage
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="images/clays_den.png"
+                alt="Family Home">
+
+        </div>
+
+    </div>
+
+</header>
+
+<section id="calculator" class="quote-section">
+
+    <div class="quote-box">
+
+        <span class="section-tag">
+            FREE CALCULATOR
+        </span>
+
+        <h2>
+            Coverage Recommendation
+        </h2>
+
+        <form id="mortgageForm">
+
+            <input
+                type="number"
+                id="mortgageBalance"
+                placeholder="Mortgage Balance"
+                required>
+
+            <input
+                type="number"
+                id="annualIncome"
+                placeholder="Annual Income"
+                required>
+
+            <input
+                type="number"
+                id="children"
+                placeholder="Number of Children"
+                required>
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Calculate Coverage
+
+            </button>
+
+        </form>
+
+        <div id="results"></div>
+
+    </div>
+
+</section>
+<section class="benefits">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                WHY COVERAGE MATTERS
+            </span>
+
+            <h2>
+                Protect More Than A Mortgage
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Mortgage Protection</h3>
+                <p>
+                    Help your family stay in their home.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Income Replacement</h3>
+                <p>
+                    Replace lost income if the unexpected occurs.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Family Security</h3>
+                <p>
+                    Protect your spouse and children.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+<section class="quote-section">
+
+    <div class="quote-box">
+
+        <span class="section-tag">
+            NEXT STEP
+        </span>
+
+        <h2>
+            Ready To Review Your Options?
+        </h2>
+
+        <p>
+            Clay can compare multiple carriers and help
+            determine what coverage best fits your goals.
+        </p>
+    </br>
+
+        <a href="https://calendly.com/clay-christian-zachry/30min"
+           target="_blank"
+           class="primary-btn">
+
+           Schedule Consultation
+
+        </a>
+
+    </div>
+
+</section>
+</section>
+<div id="results"></div>
+<script src="js/script.js"></script>
+<script> src="js/navbar.js"</script>
+
+<footer>
+
+<a href="index.html" class="logo">
+            <img
+                src="images/zachry_insurance_logo_name.png"
+                alt="Zachry Insurance Logo">
+        </a>
+
+    <p>
+        Life Insurance Solutions • Independent Agent
+    </p>
+
+    <p>
+        © 2026 Zachry Insurance
+    </p>
+
+</footer>
+</body>

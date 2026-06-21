@@ -5,29 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Zachry Insurance | Life Insurance Solutions</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="./favicon.png" sizes="32x32"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/mortage-calculator.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <nav>
     <div class="container nav-container">
-        <div class="logo">
-            Zachry Insurance
-        </div>
+
+        <a href="index.html" class="logo">
+            <img
+                src="images/zachry_insurance_logo_main.png"
+                alt="Zachry Insurance Logo">
+        </a>
+
+        <a href="mortgage-calculator.html"    class="primary-btn">
+
+            Mortgage Calculator
+        </a>
 
         <a href="https://calendly.com/clay-christian-zachry/30min"
             target="_blank"
             class="schedule-btn">
-
-                    Schedule My Consultation
-
+            Schedule My Consultation
         </a>
+
     </div>
 </nav>
 
@@ -81,29 +88,124 @@
 
 </header>
 
-<section class="trust-bar">
+<section class="info-tabs">
 
-    <div class="container trust-grid">
+    <div class="tab-nav">
 
-        <div>
+        <button class="tab-btn"
+                onclick="showTab('independent', this)">
             ✓ Independent Agent
-        </div>
+        </button>
 
-        <div>
+        <button class="tab-btn active"
+                onclick="showTab('carriers', this)">
             ✓ Multiple Carriers
-        </div>
+        </button>
 
-        <div>
+        <button class="tab-btn"
+                onclick="showTab('guidance', this)">
             ✓ Personalized Guidance
-        </div>
+        </button>
 
-        <div>
+        <button class="tab-btn"
+                onclick="showTab('review', this)">
             ✓ No Obligation Review
+        </button>
+
+    </div>
+
+    <!-- MULTIPLE CARRIERS -->
+    <div id="carriers" class="tab-content active-content">
+
+        <span class="section-tag">
+            MULTIPLE CARRIERS
+        </span>
+
+        <h2>
+            More Options. Better Protection.
+        </h2>
+
+        <p>
+            Clay compares coverage from multiple top-rated
+            insurance carriers to find the right policy
+            for your family and budget.
+        </p>
+
+        <div class="carrier-grid">
+
+            <img src="images/carriers/mutual-of-omaha.png" alt="Mutual of Omaha">
+
+            <img src="images/carriers/americo.png" alt="Americo">
+
+            <img src="images/carriers/transamerica.png" alt="Transamerica">
+
+            <img src="images/carriers/corebridge.png" alt="Corebridge">
+
         </div>
 
     </div>
 
+    <!-- INDEPENDENT -->
+    <div id="independent" class="tab-content">
+
+        <span class="section-tag">
+            INDEPENDENT AGENT
+        </span>
+
+        <h2>
+            Advice Focused On You
+        </h2>
+
+        <p>
+            Clay is not tied to a single insurance company.
+            He works independently to help clients compare
+            options and choose the coverage that best fits
+            their needs.
+        </p>
+
+    </div>
+
+    <!-- GUIDANCE -->
+    <div id="guidance" class="tab-content">
+
+        <span class="section-tag">
+            PERSONALIZED GUIDANCE
+        </span>
+
+        <h2>
+            Personalized Guidance Every Step
+        </h2>
+
+        <p>
+            Every family is different. Clay takes time
+            to understand your goals and explain options
+            in plain language.
+        </p>
+
+    </div>
+
+    <!-- REVIEW -->
+    <div id="review" class="tab-content">
+
+        <span class="section-tag">
+            NO OBLIGATION REVIEW
+        </span>
+
+        <h2>
+            Complimentary Policy Review
+        </h2>
+
+        <p>
+            Request a free review of your current
+            coverage and explore alternative options
+            with no pressure and no obligation.
+        </p>
+
+    </div>
+
 </section>
+
+
 
 <section class="about">
 
@@ -221,101 +323,185 @@
         </h2>
 
         <form id="leadForm">
+<input
+    type="text"
+    placeholder="First Name"
+    required>
 
-            <input
-                type="text"
-                placeholder="First Name"
-                required>
+<input
+    type="text"
+    placeholder="Last Name"
+    required>
 
-            <input
-                type="text"
-                placeholder="Last Name"
-                required>
+<input
+    type="email"
+    placeholder="Email Address"
+    required>
 
-            <input
-                type="email"
-                placeholder="Email Address"
-                required>
+<input
+    type="tel"
+    placeholder="Phone Number"
+    required>
 
-            <input
-                type="tel"
-                placeholder="Phone Number"
-                required>
+<label>Date of Birth</label>
 
-            <input
-                type="date"
-                required>
+<input
+    type="date"
+    required>
 
-            <label>
-                Do you currently have life insurance?
-            </label>
+<input
+    type="text"
+    placeholder="State of Residence"
+    required>
 
-            <select id="insuranceStatus">
-                <option value="">Select</option>
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select>
+<input
+    type="text"
+    placeholder="Zip Code"
+    required>
 
-            <div id="existingFields" class="hidden">
+<label>
+    How can we help you today?
+</label>
 
-                <input
-                    type="number"
-                    placeholder="Current Monthly Premium">
+<select id="leadType" required>
+    <option value="">Select</option>
+    <option value="review">Free Policy Review</option>
+    <option value="quote">New Life Insurance Quote</option>
+</select>
 
-                <input
-                    type="number"
-                    placeholder="Coverage Amount">
+<div id="existingFields" class="hidden">
 
-                <input
-                    type="text"
-                    placeholder="Years With Policy">
+    <input
+        type="text"
+        placeholder="Current Insurance Company">
 
-            </div>
+    <input
+        type="number"
+        placeholder="Current Monthly Premium">
 
-            <label>
-                Preferred Contact Method
-            </label>
+    <input
+        type="number"
+        placeholder="Coverage Amount">
 
-            <div class="contact-options">
+    <input
+        type="text"
+        placeholder="Years With Policy">
 
-                <label>
-                    <input
-                        type="radio"
-                        name="contactMethod"
-                        value="call"
-                        checked>
-                    Call Me
-                </label>
+    <label>Policy Type</label>
 
-                <label>
-                    <input
-                        type="radio"
-                        name="contactMethod"
-                        value="email">
-                    Email Me
-                </label>
+    <select>
+        <option value="">Select Policy Type</option>
+        <option>Term Life</option>
+        <option>Whole Life</option>
+        <option>Universal Life</option>
+        <option>Not Sure</option>
+    </select>
 
+    <label>
+        What would you like us to review?
+    </label>
 
+    <select>
+        <option value="">Select</option>
+        <option>Lower My Premium</option>
+        <option>Increase Coverage</option>
+        <option>Review Beneficiaries</option>
+        <option>Compare Policies</option>
+        <option>Check If My Coverage Is Enough</option>
+        <option>General Policy Review</option>
+    </select>
 
-            </div>
+    <label>
+        What prompted you to request a policy review today?
+    </label>
 
-            <div
-                id="scheduleSection"
-                class="hidden">
+    <select>
+        <option value="">Select</option>
+        <option>My Policy Is Old</option>
+        <option>My Family Situation Changed</option>
+        <option>I Think I'm Paying Too Much</option>
+        <option>I Don't Know If I Have Enough Coverage</option>
+        <option>I Was Referred By Someone</option>
+        <option>Other</option>
+    </select>
 
+</div>
 
+<label>Marital Status</label>
 
-            </div>
+<select>
+    <option value="">Select</option>
+    <option>Single</option>
+    <option>Married</option>
+    <option>Divorced</option>
+    <option>Widowed</option>
+</select>
 
-            <button
-                type="submit"
-                class="submit-btn">
+<label>Do You Have Children?</label>
 
-                Request Review
+<select>
+    <option value="">Select</option>
+    <option>Yes</option>
+    <option>No</option>
+</select>
 
-            </button>
+<label>Tobacco / Nicotine Use</label>
 
-        </form>
+<select>
+    <option value="">Select</option>
+    <option>Yes</option>
+    <option>No</option>
+</select>
+
+<label>
+    Preferred Contact Method
+</label>
+
+<div class="contact-options">
+
+    <label>
+        <input
+            type="radio"
+            name="contactMethod"
+            value="call"
+            checked>
+        Call Me
+    </label>
+
+    <label>
+        <input
+            type="radio"
+            name="contactMethod"
+            value="email">
+        Email Me
+    </label>
+
+</div>
+
+<label>
+    Best Time To Contact You
+</label>
+
+<select>
+    <option value="">Select</option>
+    <option>Morning</option>
+    <option>Afternoon</option>
+    <option>Evening</option>
+</select>
+
+<textarea
+    rows="4"
+    placeholder="Additional Questions or Comments"></textarea>
+
+<button
+    type="submit"
+    class="submit-btn">
+
+    Request Review
+
+</button>
+</form>
+
 
         <div
             id="success"
@@ -331,9 +517,11 @@
 
 <footer>
 
-    <h3>
-        Zachry Insurance
-    </h3>
+<a href="index.html" class="logo">
+            <img
+                src="images/zachry_insurance_logo_name.png"
+                alt="Zachry Insurance Logo">
+        </a>
 
     <p>
         Life Insurance Solutions • Independent Agent
@@ -345,7 +533,7 @@
 
 </footer>
 
-<script src="script.js"></script>
+
 
 </body>
 </html>

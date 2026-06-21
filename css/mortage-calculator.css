@@ -1,0 +1,17 @@
+.result-card{
+    margin-top:30px;
+    padding:30px;
+    border-radius:20px;
+    background:#f8fafc;
+    text-align:center;
+}
+
+.result-card h1{
+    font-size:3rem;
+    color:#0d3d91;
+    margin:10px 0;
+}
+
+.result-card p{
+    color:#666;
+}
