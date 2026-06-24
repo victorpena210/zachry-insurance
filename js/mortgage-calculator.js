@@ -94,11 +94,10 @@ function setupUnlockButton() {
 
     document
     .getElementById('unlockResults')
-    .addEventListener('click', saveLead);
-
+    .addEventListener('click', saveMortgageLead);
 }
 
-async function saveLead() {
+async function saveMortgageLead() {
 
 const firstName =
     document.getElementById('firstName').value;
@@ -128,10 +127,8 @@ const lastName =
     }
 
 
-    const { error } =
-await window.supabaseClient
-    .from('leads')
-    .insert({
+const { error } =
+    await saveLead({
 
         lead_source:
             'Mortgage Calculator',

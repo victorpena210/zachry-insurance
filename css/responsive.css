@@ -1,0 +1,90 @@
+/* =======================
+TABLETS
+======================= */
+
+@media (max-width: 900px) {
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-text h1{
+        font-size:2.7rem;
+    }
+
+    .hero-image img{
+        max-width:400px;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .quote-box{
+        padding:30px;
+    }
+
+    .section-header h2{
+        font-size:2.2rem;
+    }
+
+    .tab-nav{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .carrier-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+/* =======================
+MOBILE
+======================= */
+
+@media (max-width: 600px) {
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-text h1{
+        font-size:2.2rem;
+    }
+
+    .hero-text p{
+        font-size:1rem;
+    }
+
+    .nav-container{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tab-nav{
+        grid-template-columns:1fr;
+    }
+
+    .carrier-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tab-btn{
+        padding:20px;
+        font-size:1rem;
+    }
+
+}

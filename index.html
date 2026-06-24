@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Zachry Insurance | Life Insurance Solutions</title>
+<meta
+    name="description"
+    content="Zachry Insurance helps families compare life insurance options, review existing policies, and protect their mortgage, income, and loved ones.">
 <link rel="icon" href="./favicon.png" sizes="32x32"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/mortage-calculator.css">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/responsive.css">
+
 </head>
 <body>
 
@@ -20,7 +25,7 @@
 
         <a href="index.html" class="logo">
             <img
-                src="images/zachry_insurance_logo_main.png"
+                src="images/branding/zachry_insurance_logo_main.png"
                 alt="Zachry Insurance Logo">
         </a>
 
@@ -84,7 +89,7 @@
     <div class="hero-image">
 
       <img
-        src="images/clay_zachry.png"
+        src="images/heroes/clay_zachry.png"
         alt="Clay Christian Zachry">
 
     </div>
@@ -542,7 +547,7 @@
 
 <a href="index.html" class="logo">
             <img
-                src="images/zachry_insurance_logo_name.png"
+                src="images/branding/zachry_insurance_logo_name.png"
                 alt="Zachry Insurance Logo">
         </a>
 
@@ -556,98 +561,17 @@
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
-const supabaseUrl =
-'https://laixkfncclwojayzwifa.supabase.co';
+<script src="./js/config.js"></script>
 
-const supabaseKey =
-'sb_publishable_YFaPUMHnFUMqsOmLbMn5qw_Lcgd5uFM';
+<script src="js/forms/saveLead.js"></script>
 
-const supabaseClient =
-supabase.createClient(
-    supabaseUrl,
-    supabaseKey
-);
+<script src="./js/script.js"></script>
 
-</script>
-<script>
+<script src="./js/components/tabs.js"></script>
 
-document
-.getElementById("leadForm")
-.addEventListener("submit", async function(e){
+<script src="./js/forms/lead-form.js"></script>
 
-    e.preventDefault();
-
-    const inputs =
-        document.querySelectorAll("#leadForm input");
-
-    const firstName = inputs[0].value;
-    const lastName  = inputs[1].value;
-    const email     = inputs[2].value;
-    const phone     = inputs[3].value;
-
-    const { data, error } =
-        await supabaseClient
-        .from("leads")
-        .insert([
-            {
-    lead_source: "Website",
-
-    first_name: firstName,
-
-    last_name: lastName,
-
-    email: email,
-
-    phone: phone,
-
-    dob:
-        document.getElementById("dob").value,
-
-    state:
-        document.getElementById("state").value,
-
-    zip_code:
-        document.getElementById("zipCode").value,
-
-    lead_type:
-        document.getElementById("leadType").value,
-
-    current_company:
-        document.getElementById("currentCompany")?.value || null,
-
-    current_premium:
-        document.getElementById("currentPremium")?.value || null,
-
-    current_coverage:
-        document.getElementById("currentCoverage")?.value || null,
-
-    years_with_policy:
-        document.getElementById("yearsWithPolicy")?.value || null,
-
-    comments:
-        document.getElementById("comments").value
-            }
-        ]);
-
-if(error){
-
-    console.error("Supabase Error:", error);
-
-    alert(
-        "Error: " +
-        error.message
-    );
-
-    return;
-}
-
-    alert("Lead saved successfully!");
-
-});
-
-</script>
 </body>
 </html>
