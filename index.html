@@ -24,10 +24,7 @@
                 alt="Zachry Insurance Logo">
         </a>
 
-        <a href="mortgage-calculator.html"    class="primary-btn">
 
-            Mortgage Calculator
-        </a>
 
         <a href="https://calendly.com/clay-christian-zachry/30min"
             target="_blank"
@@ -59,20 +56,28 @@
       </p>
 
       <div class="hero-buttons">
-
-        <a href="#quote" class="primary-btn">
-          Free Policy Review
-        </a>
-    </br>
-    </br>
-    </br>
-
         <a href="tel:+12105551212"
            class="secondary-btn">
           Call Clay Today
         </a>
 
-      </div>
+          </div>
+    </br>
+    </br>
+    </br>
+
+        <a href="#quote" class="primary-btn">
+          Free Policy Review
+        </a>
+
+    
+    </br>
+    </br>
+    </br>
+    <a href="mortgage-calculator.html"    class="primary-btn">
+
+            Mortgage Calculator
+        </a>
 
     </div>
 
@@ -301,7 +306,7 @@
         </blockquote>
 
         <span>
-            — Client Testimonial
+            — Victor Pena
         </span>
 
     </div>
@@ -346,15 +351,18 @@
 <label>Date of Birth</label>
 
 <input
+    id="dob"
     type="date"
     required>
 
 <input
+    id="state"
     type="text"
     placeholder="State of Residence"
     required>
 
 <input
+    id="zipCode"
     type="text"
     placeholder="Zip Code"
     required>
@@ -369,23 +377,37 @@
     <option value="quote">New Life Insurance Quote</option>
 </select>
 
+
+<label>Do you currently have life insurance?</label>
+
+<select id="insuranceStatus">
+    <option value="">Select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+</select>
+
+
 <div id="existingFields" class="hidden">
 
-    <input
-        type="text"
-        placeholder="Current Insurance Company">
+<input
+    id="currentCompany"
+    type="text"
+    placeholder="Current Insurance Company">
 
-    <input
-        type="number"
-        placeholder="Current Monthly Premium">
+<input
+    id="currentPremium"
+    type="number"
+    placeholder="Current Monthly Premium">
 
-    <input
-        type="number"
-        placeholder="Coverage Amount">
+<input
+    id="currentCoverage"
+    type="number"
+    placeholder="Coverage Amount">
 
-    <input
-        type="text"
-        placeholder="Years With Policy">
+<input
+    id="yearsWithPolicy"
+    type="text"
+    placeholder="Years With Policy">
 
     <label>Policy Type</label>
 
@@ -490,6 +512,7 @@
 </select>
 
 <textarea
+    id="comments"
     rows="4"
     placeholder="Additional Questions or Comments"></textarea>
 
@@ -533,7 +556,98 @@
 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
 
+const supabaseUrl =
+'https://laixkfncclwojayzwifa.supabase.co';
 
+const supabaseKey =
+'sb_publishable_YFaPUMHnFUMqsOmLbMn5qw_Lcgd5uFM';
+
+const supabaseClient =
+supabase.createClient(
+    supabaseUrl,
+    supabaseKey
+);
+
+</script>
+<script>
+
+document
+.getElementById("leadForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const inputs =
+        document.querySelectorAll("#leadForm input");
+
+    const firstName = inputs[0].value;
+    const lastName  = inputs[1].value;
+    const email     = inputs[2].value;
+    const phone     = inputs[3].value;
+
+    const { data, error } =
+        await supabaseClient
+        .from("leads")
+        .insert([
+            {
+    lead_source: "Website",
+
+    first_name: firstName,
+
+    last_name: lastName,
+
+    email: email,
+
+    phone: phone,
+
+    dob:
+        document.getElementById("dob").value,
+
+    state:
+        document.getElementById("state").value,
+
+    zip_code:
+        document.getElementById("zipCode").value,
+
+    lead_type:
+        document.getElementById("leadType").value,
+
+    current_company:
+        document.getElementById("currentCompany")?.value || null,
+
+    current_premium:
+        document.getElementById("currentPremium")?.value || null,
+
+    current_coverage:
+        document.getElementById("currentCoverage")?.value || null,
+
+    years_with_policy:
+        document.getElementById("yearsWithPolicy")?.value || null,
+
+    comments:
+        document.getElementById("comments").value
+            }
+        ]);
+
+if(error){
+
+    console.error("Supabase Error:", error);
+
+    alert(
+        "Error: " +
+        error.message
+    );
+
+    return;
+}
+
+    alert("Lead saved successfully!");
+
+});
+
+</script>
 </body>
 </html>

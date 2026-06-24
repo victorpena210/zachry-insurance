@@ -1,3 +1,14 @@
+// ============================
+// SUPABASE CONNECTION
+// ============================
+
+const supabaseClient = window.supabase.createClient(
+  'https://laixkfncclwojayzwifa.supabase.co',
+  'sb_publishable_YFaPUMHnFUMqsOmLbMn5qw_Lcgd5uFM'
+);
+window.supabaseClient = supabaseClient;
+
+
 // LIFE INSURANCE CONDITIONAL FIELDS
 
 const insuranceStatus =
@@ -6,94 +17,21 @@ document.getElementById('insuranceStatus');
 const existingFields =
 document.getElementById('existingFields');
 
-insuranceStatus.addEventListener(
-'change',
-function(){
+if (insuranceStatus && existingFields) {
 
-if(this.value === 'yes'){
+    insuranceStatus.addEventListener(
+    'change',
+    function(){
 
-existingFields.classList.remove(
-'hidden'
-);
+        if(this.value === 'yes'){
+            existingFields.classList.remove('hidden');
+        } else {
+            existingFields.classList.add('hidden');
+        }
 
-}else{
-
-existingFields.classList.add(
-'hidden'
-);
+    });
 
 }
-
-}
-);
-
-// CONTACT METHOD
-
-const contactOptions =
-document.querySelectorAll(
-'input[name="contactMethod"]'
-);
-
-const scheduleSection =
-document.getElementById(
-'scheduleSection'
-);
-
-contactOptions.forEach(option => {
-
-option.addEventListener(
-'change',
-function(){
-
-if(this.value === 'schedule'){
-
-scheduleSection.classList.remove(
-'hidden'
-);
-
-}else{
-
-scheduleSection.classList.add(
-'hidden'
-);
-
-}
-
-}
-);
-
-});
-
-// FORM SUBMISSION
-
-const leadForm =
-document.getElementById(
-'leadForm'
-);
-
-const success =
-document.getElementById(
-'success'
-);
-
-leadForm.addEventListener(
-'submit',
-function(e){
-
-e.preventDefault();
-
-leadForm.style.display = 'none';
-
-success.classList.remove(
-'hidden'
-);
-
-success.scrollIntoView({
-behavior:'smooth'
-});
-
-}
-);
 
 // SMOOTH SCROLL
 
