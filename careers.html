@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Careers | Zachry Insurance</title>
+
+<link rel="icon" href="./favicon.png" sizes="32x32">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/forms.css">
+
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+            <img
+                src="images/branding/zachry_insurance_logo_main.png"
+                alt="Zachry Insurance Logo">
+        </a>
+
+        <div class="nav-actions">
+
+            <a
+                href="https://calendly.com/clay-christian-zachry/30min"
+                target="_blank"
+                class="schedule-btn">
+                Schedule Consultation
+            </a>
+
+            <div class="menu-wrapper">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="dropdownMenu">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <div class="dropdown-menu" id="dropdownMenu">
+
+                    <a href="index.html">Home</a>
+                    <a href="index.html#quote">Free Policy Review</a>
+                    <a href="mortgage-calculator.html">Mortgage Calculator</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="tel:+12105551212">Call Clay Today</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+
+
+<header class="hero careers-hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-text">
+
+            <span class="eyebrow">
+                CAREERS WITH ZACHRY INSURANCE
+            </span>
+
+            <h1>
+                Build A Career Helping Families Protect Their Future
+            </h1>
+
+            <p>
+                Zachry Insurance is looking for motivated people who want to grow
+                in the life insurance industry, serve families, and build a long-term career.
+            </p>
+
+            <a href="#careerForm" class="primary-btn">
+                Apply To Learn More
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="images/heroes/team_zachary.png"
+                alt="Zachry Insurance Career Opportunity">
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<section class="benefits">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                OPPORTUNITY
+            </span>
+
+            <h2>
+                Why Consider A Career In Life Insurance?
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Help Families</h3>
+                <p>
+                    Life insurance is about protecting people during the moments
+                    that matter most.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Grow Your Income</h3>
+                <p>
+                    Build skills in sales, service, follow-up, and client education.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Get Guidance</h3>
+                <p>
+                    Learn from an independent agent who understands how to compare
+                    coverage options and serve clients.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="quote-section">
+
+    <div class="quote-box">
+
+        <span class="section-tag">
+            WHO WE ARE LOOKING FOR
+        </span>
+
+        <h2>
+            This May Be A Good Fit If You Are:
+        </h2>
+
+        <div class="career-list">
+
+            <p>• Coachable and willing to learn</p>
+            <p>• Comfortable talking with people</p>
+            <p>• Interested in sales or financial protection</p>
+            <p>• Serious about building a professional career</p>
+            <p>• Licensed already or willing to learn about becoming licensed</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="careerForm" class="quote-section">
+
+    <div class="quote-box">
+
+        <span class="section-tag">
+            APPLY
+        </span>
+
+        <h2>
+            Interested In Joining Zachry Insurance?
+        </h2>
+
+        <p>
+            Fill out the form below and Clay will follow up with more information.
+        </p>
+
+        <form id="recruitingForm">
+
+            <input
+                type="text"
+                id="careerFirstName"
+                placeholder="First Name"
+                required>
+
+            <input
+                type="text"
+                id="careerLastName"
+                placeholder="Last Name"
+                required>
+
+            <input
+                type="email"
+                id="careerEmail"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="tel"
+                id="careerPhone"
+                placeholder="Phone Number"
+                required>
+
+            <input
+                type="text"
+                id="careerState"
+                placeholder="State"
+                required>
+
+            <input
+                type="text"
+                id="careerZip"
+                placeholder="Zip Code">
+
+            <label>
+                Are you currently licensed to sell life insurance?
+            </label>
+
+            <select id="licenseStatus" required>
+                <option value="">Select One</option>
+                <option value="Licensed">Yes, I am licensed</option>
+                <option value="Not Licensed">No, not yet</option>
+                <option value="Studying">I am studying / planning to get licensed</option>
+            </select>
+
+            <label>
+                Do you have sales or insurance experience?
+            </label>
+
+            <select id="experienceLevel" required>
+                <option value="">Select One</option>
+                <option value="Insurance Experience">Yes, insurance experience</option>
+                <option value="Sales Experience">Sales experience, but not insurance</option>
+                <option value="No Experience">No experience yet</option>
+            </select>
+
+            <label>
+                What interests you about this opportunity?
+            </label>
+
+            <textarea
+                id="careerMessage"
+                rows="4"
+                placeholder="Tell us a little about yourself"></textarea>
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Submit Career Interest
+
+            </button>
+
+        </form>
+
+        <div id="careerSuccess" class="success hidden">
+            Thank you. Clay will contact you shortly.
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+
+        <a href="index.html" class="logo">
+            <img
+                src="images/branding/zachry_insurance_logo_name.png"
+                alt="Zachry Insurance Logo">
+        </a>
+
+    <p>
+        Life Insurance Solutions • Independent Agent
+    </p>
+
+    <p>
+        © 2026 Zachry Insurance
+    </p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/script.js"></script>
+
+<script src="js/forms/careers-form.js"></script>
+
+</body>
+</html>

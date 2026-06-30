@@ -65,10 +65,35 @@ MOBILE
         font-size:1rem;
     }
 
-    .nav-container{
-        flex-direction:column;
-        gap:15px;
-    }
+.nav-container{
+    flex-direction:row;
+    gap:12px;
+}
+
+.logo img{
+    height:52px;
+}
+
+.nav-actions{
+    gap:8px;
+}
+
+.schedule-btn{
+    padding:12px 14px;
+    font-size:.85rem;
+    white-space:nowrap;
+}
+
+.menu-toggle{
+    width:42px;
+    height:42px;
+    flex-shrink:0;
+}
+
+.dropdown-menu{
+    right:0;
+    min-width:220px;
+}
 
     .trust-grid{
         grid-template-columns:1fr;
