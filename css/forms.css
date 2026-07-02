@@ -76,3 +76,25 @@ text-align:center;
 .hidden{
 display:none;
 }
+
+.form-message {
+    margin-top: 18px;
+    font-weight: 600;
+}
+
+.form-message.success {
+    color: #15803d;
+}
+
+.form-message.error {
+    color: #b91c1c;
+}
+
+.application-section {
+    padding: 90px 0;
+}
+
+.application-section .lead-form {
+    max-width: 900px;
+    margin: 0 auto;
+}

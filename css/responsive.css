@@ -112,4 +112,12 @@ MOBILE
         font-size:1rem;
     }
 
+        .quiz-options{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .income-calculator-grid{
+        grid-template-columns:1fr;
+    }
+
 }

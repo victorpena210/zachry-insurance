@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Application | Zachry Insurance</title>
+
+    <link rel="icon" href="./favicon.png" sizes="32x32">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <img src="images/branding/zachry_insurance_logo_main.png" alt="Zachry Insurance Logo">
+        </a>
+
+        <a href="tel:+12100000000" class="nav-btn">
+            Call Clay
+        </a>
+    </div>
+</nav>
+
+<section class="section application-section">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="eyebrow">Next Step</span>
+            <h1>Agent Application</h1>
+            <p>
+                Complete this application only if you have already spoken with Clay
+                and were invited to move forward in the process.
+            </p>
+        </div>
+
+        <form id="agentApplicationForm" class="lead-form">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" id="state" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="licensed">Are you currently licensed to sell insurance?</label>
+                    <select id="licensed" required>
+                        <option value="">Select one</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="In Progress">In Progress</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="npn">NPN Number</label>
+                    <input type="text" id="npn" placeholder="Leave blank if you do not have one">
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Insurance or Sales Experience</label>
+                    <select id="experience" required>
+                        <option value="">Select one</option>
+                        <option value="No experience">No experience</option>
+                        <option value="Some sales experience">Some sales experience</option>
+                        <option value="Insurance experience">Insurance experience</option>
+                        <option value="Licensed agent">Licensed agent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Availability</label>
+                    <select id="availability" required>
+                        <option value="">Select one</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Evenings / weekends">Evenings / weekends</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="whyInterested">Why are you interested in joining Zachry Insurance?</label>
+                <textarea id="whyInterested" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="goals">What are your income or career goals?</label>
+                <textarea id="goals" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Anything else Clay should know?</label>
+                <textarea id="notes" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn">
+                Submit Application
+            </button>
+
+            <p id="applicationMessage" class="form-message"></p>
+
+        </form>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Zachry Insurance. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/script.js"></script>
+<script src="js/agent-application.js"></script>
+
+</body>
+</html>

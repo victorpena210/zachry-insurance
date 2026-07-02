@@ -577,3 +577,194 @@ margin-bottom:35px;
 .footer-cta-box .primary-btn{
 display:inline-block;
 }
+
+/* =======================
+CAREER QUIZ / INCOME / FAQ
+======================= */
+
+.career-tool-section{
+background:#ffffff;
+}
+
+.income-section{
+background:#f8fafc;
+}
+
+.career-tool-section .section-header p,
+.career-faq-section .section-header p{
+max-width:750px;
+margin:15px auto 0;
+color:#64748b;
+font-size:1.05rem;
+}
+
+.career-tool-box{
+background:white;
+max-width:950px;
+margin:0 auto;
+padding:45px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+border:1px solid #e5e7eb;
+}
+
+.income-section .career-tool-box{
+background:#ffffff;
+}
+
+.career-quiz-form{
+gap:26px;
+}
+
+.quiz-question{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:24px;
+}
+
+.quiz-question h3{
+color:#0f172a;
+font-size:1.1rem;
+margin-bottom:18px;
+}
+
+.quiz-options{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+}
+
+.quiz-options label{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:12px;
+padding:14px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:10px;
+transition:.3s;
+}
+
+.quiz-options label:hover{
+border-color:#c9a227;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.quiz-result,
+.income-result{
+margin-top:30px;
+padding:30px;
+border-radius:18px;
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+.quiz-result h3,
+.income-result h3{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.quiz-result p,
+.income-result p{
+color:#dbeafe;
+font-size:1.1rem;
+margin-bottom:18px;
+}
+
+.income-result strong{
+color:#c9a227;
+font-size:1.3rem;
+}
+
+.income-result small{
+display:block;
+color:#cbd5e1;
+margin:15px auto 25px;
+max-width:700px;
+line-height:1.6;
+}
+
+.quiz-result .primary-btn,
+.income-result .primary-btn{
+display:inline-block;
+margin-top:10px;
+}
+
+.income-calculator-form label{
+display:block;
+font-weight:700;
+color:#0f172a;
+margin-bottom:8px;
+}
+
+.income-calculator-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.career-faq-section{
+background:white;
+}
+
+.faq-list{
+max-width:900px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.faq-item{
+border:1px solid #e5e7eb;
+border-radius:16px;
+background:#ffffff;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+overflow:hidden;
+}
+
+.faq-question{
+width:100%;
+background:white;
+border:none;
+padding:22px 26px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+font-size:1.05rem;
+font-weight:800;
+color:#0f172a;
+cursor:pointer;
+text-align:left;
+}
+
+.faq-icon{
+width:34px;
+height:34px;
+border-radius:50%;
+background:#c9a227;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.3rem;
+font-weight:800;
+flex-shrink:0;
+}
+
+.faq-answer{
+display:none;
+padding:0 26px 24px;
+color:#64748b;
+}
+
+.faq-item.open .faq-answer{
+display:block;
+}
