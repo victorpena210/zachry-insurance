@@ -121,3 +121,59 @@ MOBILE
     }
 
 }
+
+/* =======================
+SPRINT 3 RESPONSIVE
+======================= */
+
+@media (max-width: 900px) {
+
+    .resource-card-grid,
+    .resource-link-grid,
+    .testimonial-card-grid,
+    .day-schedule-grid{
+        grid-template-columns:1fr;
+    }
+
+    .timeline-item{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .resource-card,
+    .resource-link-card,
+    .agent-testimonial-card,
+    .day-schedule-card,
+    .timeline-item{
+        padding:26px;
+    }
+
+    .agent-testimonial-card p{
+        font-size:1.15rem;
+    }
+
+}
+
+
+/* =======================
+SPRINT 4 RESPONSIVE
+======================= */
+
+@media (max-width: 1000px) {
+
+    .career-path-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .career-path-grid{
+        grid-template-columns:1fr;
+    }
+
+}

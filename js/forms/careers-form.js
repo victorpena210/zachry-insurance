@@ -2,6 +2,26 @@
 // CAREERS / RECRUITING FORM
 // ============================
 
+function getRecruitingLeadSource() {
+
+    const params =
+    new URLSearchParams(window.location.search);
+
+    const source =
+    params.get("source");
+
+    if (!source) {
+        return "Careers Page";
+    }
+
+    return "Recruiting SEO - " +
+    source
+        .split("-")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
+}
+
 const recruitingForm =
 document.getElementById("recruitingForm");
 
@@ -20,7 +40,7 @@ if (recruitingForm) {
         const careerLead = {
 
             lead_source:
-            "Careers Page",
+            getRecruitingLeadSource(),
 
             first_name:
             document.getElementById("careerFirstName").value.trim(),

@@ -150,6 +150,71 @@ background:#f8fafc;
 color:#c9a227;
 }
 
+
+.dropdown-menu{
+min-width:300px;
+width:320px;
+max-width:calc(100vw - 32px);
+}
+
+.dropdown-section{
+width:100%;
+}
+
+.dropdown-parent{
+width:100%;
+background:transparent;
+border:none;
+padding:12px 14px;
+border-radius:10px;
+color:#0f172a;
+font-family:inherit;
+font-size:1rem;
+font-weight:700;
+line-height:1.4;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+}
+
+.dropdown-parent:hover{
+background:#f8fafc;
+color:#c9a227;
+}
+
+.dropdown-parent-icon{
+font-size:.9rem;
+transition:.3s;
+}
+
+.dropdown-section.open .dropdown-parent-icon{
+transform:rotate(180deg);
+}
+
+.dropdown-submenu{
+display:none;
+margin:4px 0 8px 10px;
+padding:6px 0 6px 12px;
+border-left:2px solid #c9a227;
+}
+
+.dropdown-section.open .dropdown-submenu{
+display:block;
+}
+
+.dropdown-submenu a{
+font-size:.92rem;
+font-weight:600;
+padding:9px 12px;
+color:#475569;
+}
+
+.dropdown-submenu a:hover{
+background:#f8fafc;
+color:#c9a227;
+}
+
 .nav-btn{
 background:#c9a227;
 color:white;
@@ -767,4 +832,183 @@ color:#64748b;
 
 .faq-item.open .faq-answer{
 display:block;
+}
+
+/* =======================
+SPRINT 3 CAREER PAGES
+======================= */
+
+.career-resource-section,
+.licensing-overview-section,
+.agent-work-section{
+background:#f8fafc;
+}
+
+.resource-card-grid,
+.resource-link-grid,
+.testimonial-card-grid,
+.day-schedule-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
+
+.resource-card-grid{
+grid-template-columns:repeat(2,1fr);
+max-width:950px;
+margin:0 auto;
+}
+
+.resource-card,
+.resource-link-card,
+.agent-testimonial-card,
+.day-schedule-card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:20px;
+padding:34px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+text-decoration:none;
+color:#1e293b;
+transition:.3s;
+}
+
+.resource-card:hover,
+.resource-link-card:hover,
+.day-schedule-card:hover{
+transform:translateY(-6px);
+box-shadow:0 16px 35px rgba(0,0,0,.1);
+}
+
+.resource-card span,
+.day-schedule-card span,
+.timeline-item span{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+background:#c9a227;
+color:white;
+font-weight:800;
+border-radius:999px;
+margin-bottom:18px;
+}
+
+.resource-card span,
+.day-schedule-card span{
+min-width:46px;
+height:46px;
+padding:0 14px;
+}
+
+.resource-card h3,
+.resource-link-card h3,
+.agent-testimonial-card h3,
+.day-schedule-card h3,
+.timeline-item h3{
+color:#0f172a;
+margin-bottom:12px;
+}
+
+.resource-card p,
+.resource-link-card p,
+.day-schedule-card p,
+.timeline-item p{
+color:#64748b;
+}
+
+.agent-testimonials-section,
+.licensing-steps-section,
+.expectations-section{
+background:#ffffff;
+}
+
+.agent-testimonial-card{
+background:#0f172a;
+color:white;
+}
+
+.agent-testimonial-card p{
+font-family:'Playfair Display',serif;
+font-size:1.35rem;
+line-height:1.5;
+margin-bottom:18px;
+}
+
+.agent-testimonial-card span{
+color:#cbd5e1;
+font-weight:700;
+}
+
+.coming-soon-card{
+opacity:.95;
+}
+
+.timeline-list{
+max-width:950px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.timeline-item{
+display:grid;
+grid-template-columns:70px 1fr;
+gap:20px;
+background:#f8fafc;
+border:1px solid #e5e7eb;
+border-radius:20px;
+padding:28px;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.timeline-item span{
+width:52px;
+height:52px;
+font-size:1.15rem;
+margin-bottom:0;
+}
+
+.resource-links-section{
+background:#f8fafc;
+}
+
+.resource-link-grid{
+max-width:1100px;
+margin:0 auto;
+}
+
+.resource-link-card{
+display:block;
+}
+
+
+/* =======================
+SPRINT 4 RECRUITING SEO PAGES
+======================= */
+
+.recruiting-seo-section,
+.recruiting-fit-section,
+.recruiting-overview-section{
+background:#f8fafc;
+}
+
+.recruiting-process-section{
+background:#ffffff;
+}
+
+.career-path-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+}
+
+.recruiting-seo-hero .hero-image img{
+max-height:460px;
+object-fit:contain;
+}
+
+.dropdown-menu{
+max-height:calc(100vh - 120px);
+overflow-y:auto;
 }

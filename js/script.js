@@ -59,6 +59,35 @@ document.getElementById("dropdownMenu");
 
 if (menuToggle && dropdownMenu) {
 
+    const careerDropdown =
+    dropdownMenu.querySelector(".dropdown-section");
+
+    const careerDropdownButton =
+    dropdownMenu.querySelector(".dropdown-parent");
+
+    function closeDropdownMenu() {
+
+        dropdownMenu.classList.remove("open");
+        menuToggle.classList.remove("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        if (careerDropdown && careerDropdownButton) {
+
+            careerDropdown.classList.remove("open");
+
+            careerDropdownButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+
     menuToggle.addEventListener("click", function () {
 
         const isOpen =
@@ -73,6 +102,22 @@ if (menuToggle && dropdownMenu) {
 
     });
 
+    if (careerDropdown && careerDropdownButton) {
+
+        careerDropdownButton.addEventListener("click", function () {
+
+            const isOpen =
+            careerDropdown.classList.toggle("open");
+
+            careerDropdownButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+    }
+
     document.addEventListener("click", function (e) {
 
         if (
@@ -80,13 +125,7 @@ if (menuToggle && dropdownMenu) {
             !dropdownMenu.contains(e.target)
         ) {
 
-            dropdownMenu.classList.remove("open");
-            menuToggle.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            closeDropdownMenu();
 
         }
 
@@ -96,13 +135,7 @@ if (menuToggle && dropdownMenu) {
 
         if (e.key === "Escape") {
 
-            dropdownMenu.classList.remove("open");
-            menuToggle.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            closeDropdownMenu();
 
         }
 
@@ -114,17 +147,12 @@ if (menuToggle && dropdownMenu) {
 
         link.addEventListener("click", function () {
 
-            dropdownMenu.classList.remove("open");
-            menuToggle.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            closeDropdownMenu();
 
         });
 
     });
 
 }
+
 
