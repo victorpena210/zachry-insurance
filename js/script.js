@@ -12,11 +12,17 @@ if (insuranceStatus && existingFields) {
     'change',
     function(){
 
-        if(this.value === 'yes'){
-            existingFields.classList.remove('hidden');
-        } else {
-            existingFields.classList.add('hidden');
-        }
+if (this.value === "yes") {
+    existingFields.classList.remove("hidden");
+} else {
+    existingFields.classList.add("hidden");
+
+    existingFields
+        .querySelectorAll("input, select")
+        .forEach((field) => {
+            field.value = "";
+        });
+}
 
     });
 
