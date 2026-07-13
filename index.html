@@ -9,6 +9,24 @@
     name="description"
     content="Zachry Insurance helps families compare life insurance options, review existing policies, and protect their mortgage, income, and loved ones.">
 <link rel="canonical" href="https://zachryinsurance.com/">
+
+<!-- Preferred Google/search preview image -->
+<meta name="robots" content="max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zachryinsurance.com/">
+<meta property="og:title" content="Zachry Insurance | Life Insurance Solutions">
+<meta
+    property="og:description"
+    content="Clay Christian Zachry helps families compare life insurance options and protect their mortgage, income, and loved ones.">
+
+<meta
+    property="og:image"
+    content="https://zachryinsurance.com/images/heroes/clay_zachry.png">
+
+<meta
+    property="og:image:alt"
+    content="Clay Christian Zachry, independent life insurance advisor at Zachry Insurance">
 <link rel="icon" href="/favicon.png" sizes="32x32"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -25,13 +43,19 @@
   "@id": "https://zachryinsurance.com/#insurance-agency",
   "name": "Zachry Insurance",
   "url": "https://zachryinsurance.com/",
-  "logo": "https://zachryinsurance.com/images/branding/zachry_insurance_logo_main.png",
-  "description": "Zachry Insurance helps families compare life insurance options, review existing policies, and protect their mortgage, income, and loved ones.",
-  "employee": {
-    "@type": "Person",
-    "name": "Clay Christian Zachry",
-    "jobTitle": "Independent Life Insurance Advisor"
-  },
+"logo": "https://zachryinsurance.com/images/branding/zachry_insurance_logo_main.png",
+"image": "https://zachryinsurance.com/images/heroes/clay_zachry.png",
+"description": "Zachry Insurance helps families compare life insurance options, review existing policies, and protect their mortgage, income, and loved ones.",
+ "employee": {
+  "@type": "Person",
+  "@id": "https://zachryinsurance.com/#clay-christian-zachry",
+  "name": "Clay Christian Zachry",
+  "jobTitle": "Independent Life Insurance Advisor",
+  "image": "https://zachryinsurance.com/images/heroes/clay_zachry.png",
+  "worksFor": {
+    "@id": "https://zachryinsurance.com/#insurance-agency"
+  }
+},
   "makesOffer": [
     {
       "@type": "Offer",
@@ -165,18 +189,18 @@
         </a>
 
           </div>
-    </br>
-    </br>
-    </br>
+    <br>
+    <br>
+    <br>
 
         <a href="#quote" class="primary-btn">
           Free Policy Review
         </a>
 
     
-    </br>
-    </br>
-    </br>
+    <br>
+    <br>
+    <br>
     <a href="/mortgage-calculator/"    class="primary-btn">
 
             Mortgage Calculator
@@ -432,21 +456,25 @@
 
         <form id="leadForm">
 <input
+    id="firstName"
     type="text"
     placeholder="First Name"
     required>
 
 <input
+    id="lastName"
     type="text"
     placeholder="Last Name"
     required>
 
 <input
+    id="email"
     type="email"
     placeholder="Email Address"
     required>
 
 <input
+    id="phone"
     type="tel"
     placeholder="Phone Number"
     required>
@@ -514,7 +542,7 @@
 
     <label>Policy Type</label>
 
-    <select>
+    <select id="policyType">
         <option value="">Select Policy Type</option>
         <option>Term Life</option>
         <option>Whole Life</option>
@@ -526,7 +554,7 @@
         What would you like us to review?
     </label>
 
-    <select>
+    <select id="reviewReason">
         <option value="">Select</option>
         <option>Lower My Premium</option>
         <option>Increase Coverage</option>
@@ -540,7 +568,7 @@
         What prompted you to request a policy review today?
     </label>
 
-    <select>
+    <select id="reviewTrigger">
         <option value="">Select</option>
         <option>My Policy Is Old</option>
         <option>My Family Situation Changed</option>
@@ -554,7 +582,7 @@
 
 <label>Marital Status</label>
 
-<select>
+<select id="maritalStatus">
     <option value="">Select</option>
     <option>Single</option>
     <option>Married</option>
@@ -564,7 +592,7 @@
 
 <label>Do You Have Children?</label>
 
-<select>
+<select id="hasChildren">
     <option value="">Select</option>
     <option>Yes</option>
     <option>No</option>
@@ -572,7 +600,7 @@
 
 <label>Tobacco / Nicotine Use</label>
 
-<select>
+<select id="tobaccoUse">
     <option value="">Select</option>
     <option>Yes</option>
     <option>No</option>
@@ -607,7 +635,7 @@
     Best Time To Contact You
 </label>
 
-<select>
+<select id="bestContactTime">
     <option value="">Select</option>
     <option>Morning</option>
     <option>Afternoon</option>
@@ -618,6 +646,36 @@
     id="comments"
     rows="4"
     placeholder="Additional Questions or Comments"></textarea>
+
+    <div class="consent-group">
+
+    <label class="consent-label" for="contactConsent">
+
+        <input
+            type="checkbox"
+            id="contactConsent"
+            required>
+
+        <span>
+            I agree that Zachry Insurance may contact me by phone,
+            email, or text regarding this request. I have read the
+            <a
+                href="/privacy-policy/"
+                target="_blank"
+                rel="noopener">
+                Privacy Policy
+            </a>.
+        </span>
+
+    </label>
+
+    <p class="consent-note">
+        Your information will be stored using our service providers
+        and used to respond to your request, review insurance options,
+        and maintain necessary business and compliance records.
+    </p>
+
+</div>
 
 <button
     type="submit"
