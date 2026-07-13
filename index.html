@@ -46,13 +46,33 @@
 "logo": "https://zachryinsurance.com/images/branding/zachry_insurance_logo_main.png",
 "image": "https://zachryinsurance.com/images/heroes/clay_zachry.png",
 "description": "Zachry Insurance helps families compare life insurance options, review existing policies, and protect their mortgage, income, and loved ones.",
- "employee": {
+"telephone": "+1-210-255-7475",
+"email": "clay@zachryinsurance.com",
+"contactPoint": [
+  {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+1-210-255-7475",
+    "email": "clay@zachryinsurance.com",
+    "availableLanguage": "English"
+  },
+  {
+    "@type": "ContactPoint",
+    "contactType": "privacy",
+    "email": "privacy@zachryinsurance.com",
+    "url": "https://zachryinsurance.com/privacy-policy",
+    "availableLanguage": "English"
+  }
+], 
+"employee": {
   "@type": "Person",
   "@id": "https://zachryinsurance.com/#clay-christian-zachry",
   "name": "Clay Christian Zachry",
-  "jobTitle": "Independent Life Insurance Advisor",
-  "image": "https://zachryinsurance.com/images/heroes/clay_zachry.png",
-  "worksFor": {
+"jobTitle": "Independent Life Insurance Advisor",
+"image": "https://zachryinsurance.com/images/heroes/clay_zachry.png",
+"telephone": "+1-210-255-7475",
+"email": "clay@zachryinsurance.com",
+"worksFor": {
     "@id": "https://zachryinsurance.com/#insurance-agency"
   }
 },
@@ -124,7 +144,7 @@
 
                     <a href="/">Home</a>
                     <a href="/#quote">Free Policy Review</a>
-                    <a href="/mortgage-calculator/">Mortgage Calculator</a>
+                    <a href="/mortgage-calculator">Mortgage Calculator</a>
 
                     <div class="dropdown-section">
                         <button
@@ -136,20 +156,20 @@
                         </button>
 
                         <div class="dropdown-submenu">
-                            <a href="/careers/">Careers Home</a>
-                            <a href="/texas-licensing/">Licensing Guide</a>
-                            <a href="/day-in-the-life/">Day In The Life</a>
-                            <a href="/life-insurance-agent-careers-texas/">Texas Careers</a>
-                            <a href="/life-insurance-agent-careers-san-antonio/">San Antonio Careers</a>
-                            <a href="/part-time-life-insurance-agent-texas/">Part-Time Opportunity</a>
-                            <a href="/insurance-agent-training-texas/">Training</a>
-                            <a href="/careers/#careerQuiz">Career Quiz</a>
-                            <a href="/careers/#incomeCalculator">Income Calculator</a>
-                            <a href="/careers/#careerFaq">FAQ</a>
+                            <a href="/careers">Careers Home</a>
+                            <a href="/texas-licensing">Licensing Guide</a>
+                            <a href="/day-in-the-life">Day In The Life</a>
+                            <a href="/life-insurance-agent-careers-texas">Texas Careers</a>
+                            <a href="/life-insurance-agent-careers-san-antonio">San Antonio Careers</a>
+                            <a href="/part-time-life-insurance-agent-texas">Part-Time Opportunity</a>
+                            <a href="/insurance-agent-training-texas">Training</a>
+                            <a href="/careers#careerQuiz">Career Quiz</a>
+                            <a href="/careers#incomeCalculator">Income Calculator</a>
+                            <a href="/careers#careerFaq">FAQ</a>
                         </div>
                     </div>
 
-                    <a href="tel:+12105551212">Call Clay Today</a>
+                    <a href="tel:+12102557475">Call Clay Today</a>
 
                 
 
@@ -183,7 +203,7 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="tel:+12105551212"
+        <a href="tel:+12102557475"
            class="secondary-btn">
           Call Clay Today
         </a>
@@ -201,7 +221,7 @@
     <br>
     <br>
     <br>
-    <a href="/mortgage-calculator/"    class="primary-btn">
+    <a href="/mortgage-calculator"    class="primary-btn">
 
             Mortgage Calculator
         </a>
@@ -660,7 +680,7 @@
             I agree that Zachry Insurance may contact me by phone,
             email, or text regarding this request. I have read the
             <a
-                href="/privacy-policy/"
+                href="/privacy-policy"
                 target="_blank"
                 rel="noopener">
                 Privacy Policy
@@ -700,21 +720,41 @@
 </section>
 
 <footer>
+    <div class="container">
 
-        <a href="/" class="logo">
-            <img
-                src="/images/branding/zachry_insurance_logo_name.png"
-                alt="Zachry Insurance Logo">
-        </a>
+        <p>
+            <strong>Zachry Insurance</strong>
+        </p>
 
-    <p>
-        Life Insurance Solutions • Independent Agent
-    </p>
+        <address class="footer-contact">
+            <p>
+                Phone:
+                <a href="tel:+12102557475">
+                    (210) 255-7475
+                </a>
+            </p>
 
-    <p>
-        © 2026 Zachry Insurance
-    </p>
+            <p>
+                Email:
+                <a href="mailto:clay@zachryinsurance.com">
+                    clay@zachryinsurance.com
+                </a>
+            </p>
+        </address>
 
+        <p class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <span aria-hidden="true">•</span>
+            <a href="mailto:privacy@zachryinsurance.com">
+                Privacy Requests
+            </a>
+        </p>
+
+        <p>
+            &copy; 2026 Zachry Insurance. All rights reserved.
+        </p>
+
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>

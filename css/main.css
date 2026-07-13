@@ -540,6 +540,31 @@ height:90px;
 width:auto;
 }
 
+.footer-contact {
+    margin: 16px 0;
+    font-style: normal;
+}
+
+.footer-contact p {
+    margin: 6px 0;
+}
+
+.footer-contact a,
+.footer-links a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin: 16px 0;
+}
+
 /* =======================
 GREAT AGENT SECTION
 ======================= */
