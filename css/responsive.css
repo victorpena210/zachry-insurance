@@ -44,6 +44,10 @@ TABLETS
     .carrier-grid{
         grid-template-columns:1fr 1fr;
     }
+
+    .licensed-state-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
 }
 
 
@@ -104,6 +108,20 @@ MOBILE
     }
 
     .carrier-grid{
+        grid-template-columns:1fr;
+    }
+
+    .licensed-map-card{
+        padding:62px 12px 18px;
+        border-radius:18px;
+    }
+
+    .licensed-map-legend{
+        top:16px;
+        right:16px;
+    }
+
+    .licensed-state-grid{
         grid-template-columns:1fr;
     }
 
