@@ -495,20 +495,20 @@ font-size:1.1rem;
 CARRIERS
 ======================= */
 
-.carrier-grid{
-margin-top:40px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
-align-items:center;
+.carrier-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    align-items: center;
 }
 
-.carrier-grid img{
-width:220px;
-height:80px;
-object-fit:contain;
-margin:auto;
-display:block;
+.carrier-grid img {
+    width: 180px;
+    height: 90px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
 }
 
 /* =======================
