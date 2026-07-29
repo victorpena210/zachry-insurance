@@ -84,6 +84,12 @@
       "url": "https://zachryinsurance.com/about-clay-zachry",
       "name": "About Clay Christian Zachry",
       "description": "Learn about Clay Christian Zachry, his ethical approach to life insurance, and the states where he is licensed.",
+      "isPartOf": {
+        "@id": "https://zachryinsurance.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://zachryinsurance.com/about-clay-zachry#breadcrumb"
+      },
       "dateCreated": "2026-07-23",
       "dateModified": "2026-07-29",
       "mainEntity": {
@@ -128,6 +134,29 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://zachryinsurance.com/about-clay-zachry#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://zachryinsurance.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Clay",
+      "item": "https://zachryinsurance.com/about-clay-zachry"
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -201,6 +230,14 @@
 
             </div>
         </div>
+    </div>
+</nav>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">About Clay</li>
+        </ol>
     </div>
 </nav>
 

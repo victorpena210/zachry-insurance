@@ -72,73 +72,91 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
-  "@id": "https://zachryinsurance.com/#insurance-agency",
-  "name": "Zachry Insurance",
-  "url": "https://zachryinsurance.com/",
-"logo": "https://zachryinsurance.com/images/branding/zachry_insurance_logo_main.webp",
-"image": "https://zachryinsurance.com/images/heroes/clay_zachry.webp",
-"description": "Based in Austin, Texas, Zachry Insurance helps families compare life insurance options, review existing policies, and protect their mortgage, income, and loved ones.",
-"telephone": "+1-210-255-7475",
-"email": "clay@zachryinsurance.com",
-"areaServed": [
-  {
-    "@type": "City",
-    "name": "Austin"
-  },
-  {
-    "@type": "State",
-    "name": "Texas"
-  }
-],
-"contactPoint": [
-  {
-    "@type": "ContactPoint",
-    "contactType": "customer service",
-    "telephone": "+1-210-255-7475",
-    "email": "clay@zachryinsurance.com",
-    "availableLanguage": "English"
-  },
-  {
-    "@type": "ContactPoint",
-    "contactType": "privacy",
-    "email": "privacy@zachryinsurance.com",
-    "url": "https://zachryinsurance.com/privacy-policy",
-    "availableLanguage": "English"
-  }
-], 
-"employee": {
-  "@type": "Person",
-  "@id": "https://zachryinsurance.com/#clay-christian-zachry",
-  "name": "Clay Christian Zachry",
-"jobTitle": "Independent Life Insurance Advisor",
-"image": "https://zachryinsurance.com/images/heroes/clay_zachry.webp",
-"telephone": "+1-210-255-7475",
-"email": "clay@zachryinsurance.com",
-"worksFor": {
-    "@id": "https://zachryinsurance.com/#insurance-agency"
-  }
-},
-  "makesOffer": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Life Insurance Policy Review"
-      }
+      "@type": "InsuranceAgency",
+      "@id": "https://zachryinsurance.com/#insurance-agency",
+      "name": "Zachry Insurance",
+      "url": "https://zachryinsurance.com/",
+      "logo": "https://zachryinsurance.com/images/branding/zachry_insurance_logo_main.webp",
+      "image": "https://zachryinsurance.com/images/heroes/clay_zachry.webp",
+      "description": "Based in Austin, Texas, Zachry Insurance helps families compare life insurance options, review existing policies, and protect their mortgage, income, and loved ones.",
+      "telephone": "+1-210-255-7475",
+      "email": "clay@zachryinsurance.com",
+      "areaServed": [
+        {"@type": "State", "name": "Alabama"},
+        {"@type": "State", "name": "Arkansas"},
+        {"@type": "State", "name": "Georgia"},
+        {"@type": "State", "name": "Indiana"},
+        {"@type": "State", "name": "Kentucky"},
+        {"@type": "State", "name": "Louisiana"},
+        {"@type": "State", "name": "Michigan"},
+        {"@type": "State", "name": "North Carolina"},
+        {"@type": "State", "name": "Ohio"},
+        {"@type": "State", "name": "Pennsylvania"},
+        {"@type": "State", "name": "South Carolina"},
+        {"@type": "State", "name": "Tennessee"},
+        {"@type": "State", "name": "Texas"}
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+1-210-255-7475",
+          "email": "clay@zachryinsurance.com",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "privacy",
+          "email": "privacy@zachryinsurance.com",
+          "url": "https://zachryinsurance.com/privacy-policy",
+          "availableLanguage": "English"
+        }
+      ],
+      "employee": {
+        "@type": "Person",
+        "@id": "https://zachryinsurance.com/#clay-christian-zachry",
+        "name": "Clay Christian Zachry",
+        "jobTitle": "Independent Life Insurance Advisor",
+        "image": "https://zachryinsurance.com/images/heroes/clay_zachry.webp",
+        "telephone": "+1-210-255-7475",
+        "email": "clay@zachryinsurance.com",
+        "worksFor": {
+          "@id": "https://zachryinsurance.com/#insurance-agency"
+        }
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Life Insurance Policy Review"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Life Insurance Comparison and Guidance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mortgage Protection Coverage"
+          }
+        }
+      ]
     },
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Life Insurance Comparison and Guidance"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Mortgage Protection Coverage"
+      "@type": "WebSite",
+      "@id": "https://zachryinsurance.com/#website",
+      "url": "https://zachryinsurance.com/",
+      "name": "Zachry Insurance",
+      "publisher": {
+        "@id": "https://zachryinsurance.com/#insurance-agency"
       }
     }
   ]
