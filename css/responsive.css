@@ -194,4 +194,22 @@ SPRINT 4 RESPONSIVE
         grid-template-columns:1fr;
     }
 
+    .topic-jump-inner{
+        justify-content:flex-start;
+    }
+
+    .answer-summary,
+    .coverage-planning-box,
+    .content-panel{
+        padding:22px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .two-column-content{
+        grid-template-columns:1fr;
+    }
+
 }
