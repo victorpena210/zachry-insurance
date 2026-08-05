@@ -1200,7 +1200,7 @@ overflow-y:auto;
 }
 
 /* =======================
-FINAL EXPENSE SEO / AEO PAGE
+INSURANCE SEO / AEO PAGES
 ======================= */
 
 .content-review-note{
@@ -1208,6 +1208,18 @@ margin-top:18px;
 color:#cbd5e1;
 font-size:.88rem;
 line-height:1.6;
+}
+
+.content-review-note a{
+color:#ffffff;
+font-weight:700;
+text-decoration:underline;
+text-underline-offset:3px;
+}
+
+.content-review-note a:hover,
+.content-review-note a:focus-visible{
+color:#c9a227;
 }
 
 .topic-jump-nav{
