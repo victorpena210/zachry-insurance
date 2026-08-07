@@ -162,6 +162,15 @@ if (mortgageForm) {
                 throw error;
             }
 
+            window.trackGaEvent?.(
+                "generate_lead",
+                {
+                    lead_source: "Mortgage Calculator",
+                    form_name: "mortgage_calculator",
+                    page_path: window.location.pathname
+                }
+            );
+
             showMortgageResults(recommendedCoverage);
         } catch (error) {
             console.error("Mortgage lead submission error:", error);

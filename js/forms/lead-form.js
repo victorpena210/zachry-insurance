@@ -37,6 +37,40 @@ if (leadForm) {
         formErrorMessage?.classList.add("hidden");
     };
 
+        // ============================
+    // LEAD FORM START TRACKING
+    // ============================
+
+    let leadFormStarted = false;
+
+    const trackLeadFormStart = () => {
+
+        if (leadFormStarted) {
+            return;
+        }
+
+        leadFormStarted = true;
+
+        window.trackGaEvent?.(
+            "lead_form_start",
+            {
+                form_name: "homepage_lead_form",
+                page_path: window.location.pathname
+            }
+        );
+
+    };
+
+    leadForm.addEventListener(
+        "input",
+        trackLeadFormStart
+    );
+
+    leadForm.addEventListener(
+        "change",
+        trackLeadFormStart
+    );
+
     leadForm.addEventListener("submit", async function (event) {
 
         event.preventDefault();
@@ -95,6 +129,19 @@ if (leadForm) {
             if (error) {
                 throw error;
             }
+
+            // ============================
+            // SUCCESSFUL LEAD CONVERSION
+            // ============================
+
+            window.trackGaEvent?.(
+                "generate_lead",
+                {
+                    lead_source: "Website",
+                    form_name: "homepage_lead_form",
+                    page_path: window.location.pathname
+                }
+            );
 
             leadForm.reset();
 
