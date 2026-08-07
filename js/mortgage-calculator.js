@@ -1,206 +1,238 @@
-console.log(
-'Mortgage calculator loaded'
-);
-let recommendedCoverage = 0;
+console.log("Mortgage calculator loaded");
 
+let recommendedCoverage = 0;
 let mortgage = 0;
 let income = 0;
 let children = 0;
 
-document
-.getElementById('mortgageForm')
-.addEventListener('submit', function(e){
+const mortgageForm = document.getElementById("mortgageForm");
 
-    e.preventDefault();
+if (mortgageForm) {
+    mortgageForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    mortgage =
-        parseFloat(
-            document.getElementById('mortgageBalance').value
+        mortgage = parseFloat(
+            document.getElementById("mortgageBalance").value
         );
 
-    income =
-        parseFloat(
-            document.getElementById('annualIncome').value
+        income = parseFloat(
+            document.getElementById("annualIncome").value
         );
 
-    children =
-        parseInt(
-            document.getElementById('children').value
+        children = parseInt(
+            document.getElementById("children").value,
+            10
         );
 
-    const incomeReplacement =
-        income * 10;
+        const incomeReplacement = income * 10;
+        const childBenefit = children * 50000;
 
-    const childBenefit =
-        children * 50000;
+        recommendedCoverage =
+            mortgage + incomeReplacement + childBenefit;
 
-    recommendedCoverage =
-        mortgage +
-        incomeReplacement +
-        childBenefit;
+        document.getElementById("results").innerHTML = `
+            <div class="lead-gate" id="mortgageLeadGate">
+                <h2>Your Results Are Ready</h2>
 
-    document.getElementById('results').innerHTML = `
+                <p>
+                    Enter your information to unlock your personalized coverage recommendation.
+                </p>
 
-        <div class="lead-gate">
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="First Name"
+                    autocomplete="given-name"
+                    required
+                >
 
-            <h2>
-                Your Results Are Ready
-            </h2>
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Last Name"
+                    autocomplete="family-name"
+                    required
+                >
 
-            <p>
-                Enter your information to unlock your personalized coverage recommendation.
-            </p>
+                <input
+                    type="email"
+                    id="leadEmail"
+                    placeholder="Email Address"
+                    autocomplete="email"
+                    required
+                >
 
-            <input
-                type="text"
-                id="firstName"
-                placeholder="First Name"
-            >
+                <input
+                    type="tel"
+                    id="leadPhone"
+                    placeholder="Phone Number"
+                    autocomplete="tel"
+                    required
+                >
 
-            <input
-                type="text"
-                id="lastName"
-                placeholder="Last Name"
-            >
+                <div class="consent-group">
+                    <label class="consent-label" for="mortgageContactConsent">
+                        <input
+                            type="checkbox"
+                            id="mortgageContactConsent"
+                            required
+                        >
 
-            <input
-                type="email"
-                id="leadEmail"
-                placeholder="Email Address"
-            >
+                        <span data-consent-text>
+                            I agree that Zachry Insurance may contact me by
+                            phone, email, or text about this request. I have
+                            read the
+                            <a href="/privacy-policy" target="_blank" rel="noopener">
+                                Privacy Policy
+                            </a>.
+                        </span>
+                    </label>
 
-            <input
-                type="tel"
-                id="leadPhone"
-                placeholder="Phone Number"
-            >
+                    <p class="consent-note">
+                        This permission is for responding to this request.
+                        It does not authorize automated or prerecorded
+                        marketing calls or texts.
+                    </p>
+                </div>
 
-            <button
-                id="unlockResults"
-                class="submit-btn"
-            >
-                Show My Results
-            </button>
+                <button
+                    id="unlockResults"
+                    class="submit-btn"
+                    type="button"
+                >
+                    Show My Results
+                </button>
 
-        </div>
+                <div
+                    id="mortgageLeadError"
+                    class="form-error hidden"
+                    role="alert"
+                    aria-live="assertive"
+                ></div>
+            </div>
+        `;
 
-    `;
-
-    setupUnlockButton();
-
-});
+        setupUnlockButton();
+    });
+}
 
 function setupUnlockButton() {
-
     document
-    .getElementById('unlockResults')
-    .addEventListener('click', saveMortgageLead);
+        .getElementById("unlockResults")
+        ?.addEventListener("click", saveMortgageLead);
+}
+
+function showMortgageError(message) {
+    const errorElement = document.getElementById("mortgageLeadError");
+
+    if (!errorElement) {
+        return;
+    }
+
+    errorElement.textContent = message;
+    errorElement.classList.remove("hidden");
 }
 
 async function saveMortgageLead() {
+    const firstName =
+        document.getElementById("firstName").value.trim();
 
-const firstName =
-    document.getElementById('firstName').value;
-
-const lastName =
-    document.getElementById('lastName').value;
+    const lastName =
+        document.getElementById("lastName").value.trim();
 
     const email =
-        document.getElementById('leadEmail').value;
+        document.getElementById("leadEmail").value.trim();
 
     const phone =
-        document.getElementById('leadPhone').value;
+        document.getElementById("leadPhone").value.trim();
 
+    const unlockButton =
+        document.getElementById("unlockResults");
 
-    if (
-        !firstName ||
-        !lastName ||
-        !email ||
-        !phone
-    ) {
+    document
+        .getElementById("mortgageLeadError")
+        ?.classList.add("hidden");
 
-        alert(
-            'Please complete all fields.'
-        );
-
+    if (!firstName || !lastName || !email || !phone) {
+        showMortgageError("Please complete all contact fields.");
         return;
     }
 
+    if (typeof window.getContactConsent !== "function") {
+        console.error("Mortgage consent helper is unavailable.");
+        showMortgageError(
+            "The form could not verify your contact permission. Please refresh the page and try again."
+        );
+        return;
+    }
 
-const { error } =
-    await saveLead({
-
-        lead_source:
-            'Mortgage Calculator',
-
-        first_name:
-            firstName,
-
-        last_name:
-            lastName,
-
-        email:
-            email,
-
-        phone:
-            phone,
-
-        mortgage_balance:
-            mortgage,
-
-        annual_income:
-            income,
-
-        children_count:
-            children,
-
-        recommended_coverage:
-            recommendedCoverage,
-
-        status:
-            'New'
-
+    const leadGate = document.getElementById("mortgageLeadGate");
+    const consent = window.getContactConsent({
+        container: leadGate,
+        checkboxId: "mortgageContactConsent"
     });
 
-
-    if(error){
-
-        console.error(error);
-
-        alert(
-            'Unable to save lead.'
+    if (!consent) {
+        showMortgageError(
+            "Please agree to the contact permission before viewing your results."
         );
-
         return;
     }
 
+    if (unlockButton) {
+        unlockButton.disabled = true;
+        unlockButton.textContent = "Saving...";
+    }
 
-    document.getElementById('results').innerHTML = `
+    try {
+        const { error } = await saveLead({
+            lead_source: "Mortgage Calculator",
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone: phone,
+            mortgage_balance: mortgage,
+            annual_income: income,
+            children_count: children,
+            recommended_coverage: recommendedCoverage,
+            status: "New",
+            ...consent
+        });
 
-        <div class="result-card">
+        if (error) {
+            throw error;
+        }
 
-            <h2>
-                Recommended Coverage
-            </h2>
+        document.getElementById("results").innerHTML = `
+            <div class="result-card">
+                <h2>Recommended Coverage</h2>
 
-            <h1>
-                $${recommendedCoverage.toLocaleString()}
-            </h1>
+                <h1>$${recommendedCoverage.toLocaleString()}</h1>
 
-            <p>
-                Based on the information provided,
-                this is a general estimate.
-            </p>
+                <p>
+                    Based on the information provided,
+                    this is a general estimate.
+                </p>
 
-<a
-    href="https://calendly.com/clay-christian-zachry/30min"
-    target="_blank"
-    class="primary-btn"
->
-    Schedule Consultation
-</a>
-
-        </div>
-
-    `;
+                <a
+                    href="https://calendly.com/clay-christian-zachry/30min"
+                    target="_blank"
+                    rel="noopener"
+                    class="primary-btn"
+                >
+                    Schedule Consultation
+                </a>
+            </div>
+        `;
+    } catch (error) {
+        console.error("Mortgage lead submission error:", error);
+        showMortgageError(
+            "We could not save your request. Please try again or contact Clay directly."
+        );
+    } finally {
+        if (unlockButton && document.body.contains(unlockButton)) {
+            unlockButton.disabled = false;
+            unlockButton.textContent = "Show My Results";
+        }
+    }
 }

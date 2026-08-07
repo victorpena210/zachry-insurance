@@ -301,6 +301,25 @@ text-decoration:none;
 font-weight:700;
 }
 
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+align-items:center;
+}
+
+.hero-calculator-link{
+display:inline-block;
+margin-top:20px;
+color:#ffffff;
+font-weight:700;
+text-underline-offset:4px;
+}
+
+.hero-calculator-link:hover{
+color:#f8e7a7;
+}
+
 /* =======================
 HERO
 ======================= */

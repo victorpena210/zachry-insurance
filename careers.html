@@ -1136,6 +1136,29 @@
                 rows="4"
                 placeholder="Tell us a little about yourself"></textarea>
 
+            <div class="consent-group">
+                <label class="consent-label" for="careerContactConsent">
+                    <input
+                        type="checkbox"
+                        id="careerContactConsent"
+                        required>
+
+                    <span data-consent-text>
+                        I agree that Zachry Insurance may contact me by
+                        phone, email, or text about this career inquiry. I have
+                        read the
+                        <a href="/privacy-policy" target="_blank" rel="noopener">
+                            Privacy Policy
+                        </a>.
+                    </span>
+                </label>
+
+                <p class="consent-note">
+                    This permission is for responding to this inquiry.
+                    It does not authorize automated or prerecorded marketing calls or texts.
+                </p>
+            </div>
+
             <button
                 type="submit"
                 class="submit-btn">
@@ -1146,8 +1169,12 @@
 
         </form>
 
-        <div id="careerSuccess" class="success hidden">
+        <div id="careerSuccess" class="success hidden" role="status" aria-live="polite">
             Thank you. Clay will contact you shortly.
+        </div>
+
+        <div id="careerError" class="form-error hidden" role="alert" aria-live="assertive">
+            We could not submit your career interest. Please try again or contact Clay directly.
         </div>
 
     </div>
@@ -1274,6 +1301,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="/js/config.js"></script>
+<script src="/js/forms/consent.js"></script>
 
 <script src="/js/script.js"></script>
 

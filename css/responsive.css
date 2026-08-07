@@ -69,6 +69,21 @@ MOBILE
         font-size:1rem;
     }
 
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .hero-buttons .primary-btn,
+    .hero-buttons .secondary-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero-calculator-link{
+        margin-top:18px;
+    }
+
 .nav-container{
     flex-direction:row;
     gap:12px;

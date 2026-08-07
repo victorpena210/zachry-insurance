@@ -199,6 +199,29 @@
                 <textarea id="notes" rows="5"></textarea>
             </div>
 
+            <div class="consent-group">
+                <label class="consent-label" for="applicationContactConsent">
+                    <input
+                        type="checkbox"
+                        id="applicationContactConsent"
+                        required>
+
+                    <span data-consent-text>
+                        I agree that Zachry Insurance may contact me by
+                        phone, email, or text about this application. I have
+                        read the
+                        <a href="/privacy-policy" target="_blank" rel="noopener">
+                            Privacy Policy
+                        </a>.
+                    </span>
+                </label>
+
+                <p class="consent-note">
+                    This permission is for responding to this application.
+                    It does not authorize automated or prerecorded marketing calls or texts.
+                </p>
+            </div>
+
             <button type="submit" class="primary-btn">
                 Submit Application
             </button>
@@ -252,6 +275,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/config.js"></script>
+<script src="/js/forms/consent.js"></script>
 <script src="/js/script.js"></script>
 <script src="/js/agent-application.js"></script>
 
