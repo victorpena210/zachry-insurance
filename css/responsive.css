@@ -228,3 +228,39 @@ SPRINT 4 RESPONSIVE
     }
 
 }
+
+
+/* TEAM PAGE RESPONSIVE */
+@media (max-width: 900px) {
+    .agent-profile-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+    .agent-profile-photo{
+        margin:0 auto;
+    }
+    .agent-profile-copy{
+        text-align:center;
+    }
+    .agent-profile-copy > p:not(.agent-profile-title){
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .agent-contact-card{
+        text-align:left;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-page-hero h1,
+    .agent-profile-copy h1{
+        font-size:2.45rem;
+    }
+    .team-page-hero,
+    .agent-profile-hero{
+        padding:70px 0;
+    }
+    .team-member-content{
+        padding:24px;
+    }
+}
