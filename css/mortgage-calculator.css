@@ -15,3 +15,75 @@
 .result-card p{
     color:#666;
 }
+/* =========================
+MORTGAGE CALCULATOR LEAD FORM
+========================= */
+
+.calculator-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.calculator-form-section h3 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.15rem;
+}
+
+.calculator-helper {
+    margin: -4px 0 6px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.calculator-form-section > label,
+.calculator-name-grid label {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.calculator-name-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.calculator-name-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#mortgageSubmitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.result-eyebrow {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.result-card:focus {
+    outline: 3px solid rgba(128, 101, 21, 0.3);
+    outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+    .calculator-form-section {
+        padding: 18px;
+    }
+
+    .calculator-name-grid {
+        grid-template-columns: 1fr;
+    }
+}

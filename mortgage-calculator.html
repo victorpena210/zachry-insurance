@@ -283,35 +283,151 @@
 
         <form id="mortgageForm">
 
-            <input
-                type="number"
-                id="mortgageBalance"
-                placeholder="Mortgage Balance"
-                required>
+            <div class="calculator-form-section">
+                <h3>1. Tell us about your coverage needs</h3>
+                <p class="calculator-helper">
+                    These numbers are used only to create your educational coverage estimate.
+                </p>
 
-            <input
-                type="number"
-                id="annualIncome"
-                placeholder="Annual Income"
-                required>
+                <label for="mortgageBalance">Mortgage Balance</label>
+                <input
+                    type="number"
+                    id="mortgageBalance"
+                    placeholder="$250,000"
+                    min="0"
+                    step="1"
+                    inputmode="decimal"
+                    required>
 
-            <input
-                type="number"
-                id="children"
-                placeholder="Number of Children"
-                required>
+                <label for="annualIncome">Annual Household Income</label>
+                <input
+                    type="number"
+                    id="annualIncome"
+                    placeholder="$75,000"
+                    min="0"
+                    step="1"
+                    inputmode="decimal"
+                    required>
+
+                <label for="children">Number of Children</label>
+                <input
+                    type="number"
+                    id="children"
+                    placeholder="0"
+                    min="0"
+                    step="1"
+                    inputmode="numeric"
+                    required>
+            </div>
+
+            <div class="calculator-form-section">
+                <h3>2. Tell us how Clay can reach you</h3>
+                <p class="calculator-helper">
+                    Before your estimate is displayed, your contact details and calculator inputs are saved with this request.
+                </p>
+
+                <div class="calculator-name-grid">
+                    <div>
+                        <label for="mortgageFirstName">First Name</label>
+                        <input
+                            type="text"
+                            id="mortgageFirstName"
+                            placeholder="First name"
+                            autocomplete="given-name"
+                            maxlength="80"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="mortgageLastName">Last Name</label>
+                        <input
+                            type="text"
+                            id="mortgageLastName"
+                            placeholder="Last name"
+                            autocomplete="family-name"
+                            maxlength="80"
+                            required>
+                    </div>
+                </div>
+
+                <label for="mortgageEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="mortgageEmail"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    maxlength="150"
+                    required>
+
+                <label for="mortgagePhone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="mortgagePhone"
+                    placeholder="Phone number"
+                    autocomplete="tel"
+                    maxlength="25"
+                    required>
+
+                <label for="mortgageState">State of Residence</label>
+                <select id="mortgageState" required>
+                    <option value="">Select your state</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                </select>
+
+                <div class="consent-group">
+                    <label class="consent-label" for="mortgageContactConsent">
+                        <input
+                            type="checkbox"
+                            id="mortgageContactConsent"
+                            required>
+
+                        <span data-consent-text>
+                            I agree that Zachry Insurance may contact me by
+                            phone, email, or text about this request. I have
+                            read the
+                            <a href="/privacy-policy" target="_blank" rel="noopener">
+                                Privacy Policy
+                            </a>.
+                        </span>
+                    </label>
+
+                    <p class="consent-note">
+                        This permission is for responding to this request.
+                        It does not authorize automated or prerecorded
+                        marketing calls or texts.
+                    </p>
+                </div>
+            </div>
 
             <button
+                id="mortgageSubmitButton"
                 type="submit"
                 class="submit-btn">
-
-                Calculate Coverage
-
+                Get My Coverage Estimate
             </button>
+
+            <div
+                id="mortgageLeadError"
+                class="form-error hidden"
+                role="alert"
+                aria-live="assertive">
+            </div>
 
         </form>
 
-<div id="results"></div>
+        <div id="results" aria-live="polite"></div>
 
 </div>
 
