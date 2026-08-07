@@ -1,13 +1,16 @@
-# Old .html URLs -> clean URLs
+# =========================================================
+# OLD .HTML URLS -> CLEAN PUBLIC URLS
+# =========================================================
+
 /index.html  /  301!
+
+/about-clay-zachry.html  /about-clay-zachry  301!
 /mortgage-calculator.html  /mortgage-calculator  301!
 /careers.html  /careers  301!
 /texas-licensing.html  /texas-licensing  301!
 /day-in-the-life.html  /day-in-the-life  301!
 /life-insurance-agent-careers-texas.html  /life-insurance-agent-careers-texas  301!
 /life-insurance-agent-careers-austin.html  /life-insurance-agent-careers-austin  301!
-/life-insurance-agent-careers-san-antonio.html  /life-insurance-agent-careers-austin  301!
-/life-insurance-agent-careers-san-antonio  /life-insurance-agent-careers-austin  301!
 /part-time-life-insurance-agent-texas.html  /part-time-life-insurance-agent-texas  301!
 /insurance-agent-training-texas.html  /insurance-agent-training-texas  301!
 /agent-application.html  /agent-application  301!
@@ -15,5 +18,35 @@
 /term-life-insurance-austin.html  /term-life-insurance-austin  301!
 /final-expense-insurance.html  /final-expense-insurance  301!
 /life-insurance-for-parents.html  /life-insurance-for-parents  301!
+
+
+# =========================================================
+# LEGACY URLS
+# =========================================================
+
+/life-insurance-agent-careers-san-antonio.html  /life-insurance-agent-careers-austin  301!
+/life-insurance-agent-careers-san-antonio  /life-insurance-agent-careers-austin  301!
+
 /whole-life-insurance-final-expense.html  /final-expense-insurance  301!
 /whole-life-insurance-final-expense  /final-expense-insurance  301!
+
+
+# =========================================================
+# CLEAN PUBLIC URLS -> ACTUAL HTML FILES
+# These are internal rewrites. The browser keeps the clean URL.
+# =========================================================
+
+/about-clay-zachry  /about-clay-zachry.html  200
+/mortgage-calculator  /mortgage-calculator.html  200
+/careers  /careers.html  200
+/texas-licensing  /texas-licensing.html  200
+/day-in-the-life  /day-in-the-life.html  200
+/life-insurance-agent-careers-texas  /life-insurance-agent-careers-texas.html  200
+/life-insurance-agent-careers-austin  /life-insurance-agent-careers-austin.html  200
+/part-time-life-insurance-agent-texas  /part-time-life-insurance-agent-texas.html  200
+/insurance-agent-training-texas  /insurance-agent-training-texas.html  200
+/agent-application  /agent-application.html  200
+/privacy-policy  /privacy-policy.html  200
+/term-life-insurance-austin  /term-life-insurance-austin.html  200
+/final-expense-insurance  /final-expense-insurance.html  200
+/life-insurance-for-parents  /life-insurance-for-parents.html  200
