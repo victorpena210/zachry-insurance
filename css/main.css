@@ -1397,3 +1397,11 @@ line-height:1.75;
 .content-panel p + p{
 margin-top:14px;
 }
+
+
+/* PROJECT-WIDE IN-PAGE NAVIGATION OFFSET */
+section[id],
+main[id],
+h2[id] {
+    scroll-margin-top: 110px;
+}
