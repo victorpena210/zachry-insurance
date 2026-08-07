@@ -147,7 +147,7 @@ font-weight:600;
 
 .dropdown-menu a:hover{
 background:#f8fafc;
-color:#c9a227;
+color:#806515;
 }
 
 
@@ -180,7 +180,7 @@ cursor:pointer;
 
 .dropdown-parent:hover{
 background:#f8fafc;
-color:#c9a227;
+color:#806515;
 }
 
 .dropdown-parent-icon{
@@ -212,12 +212,12 @@ color:#475569;
 
 .dropdown-submenu a:hover{
 background:#f8fafc;
-color:#c9a227;
+color:#806515;
 }
 
 .nav-btn{
 background:#c9a227;
-color:white;
+color:#0f172a;
 padding:12px 22px;
 border-radius:10px;
 text-decoration:none;
@@ -272,7 +272,7 @@ BREADCRUMBS
 }
 
 .breadcrumb-list a:hover {
-    color: #c9a227;
+    color:#806515;
 }
 
 .breadcrumb-list [aria-current="page"] {
@@ -285,7 +285,7 @@ BUTTONS
 
 .primary-btn{
 background:#c9a227;
-color:white;
+color:#0f172a;
 padding:16px 30px;
 border-radius:12px;
 text-decoration:none;
@@ -388,7 +388,7 @@ display:inline-block;
 font-size:.8rem;
 font-weight:700;
 letter-spacing:2px;
-color:#c9a227;
+color:#806515;
 margin-bottom:10px;
 }
 
@@ -771,7 +771,7 @@ width:38px;
 height:38px;
 border-radius:50%;
 background:#c9a227;
-color:white;
+color:#0f172a;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -1001,7 +1001,7 @@ width:34px;
 height:34px;
 border-radius:50%;
 background:#c9a227;
-color:white;
+color:#0f172a;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -1073,7 +1073,7 @@ display:inline-flex;
 align-items:center;
 justify-content:center;
 background:#c9a227;
-color:white;
+color:#0f172a;
 font-weight:800;
 border-radius:999px;
 margin-bottom:18px;

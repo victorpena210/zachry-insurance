@@ -3,94 +3,156 @@
 // ============================
 
 const leadForm = document.getElementById("leadForm");
+const successMessage = document.getElementById("success");
 
 if (leadForm) {
+
     const getValue = (id) => {
-        const value = document.getElementById(id)?.value?.trim();
+        const value = document
+            .getElementById(id)
+            ?.value
+            ?.trim();
+
         return value || null;
     };
 
-    leadForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
+    leadForm.addEventListener("submit", async function (event) {
 
-        const insuranceStatus = getValue("insuranceStatus");
-        const hasExistingInsurance = insuranceStatus === "yes";
+        event.preventDefault();
 
-        const contactMethod =
-            leadForm.querySelector(
-                'input[name="contactMethod"]:checked'
-            )?.value || null;
+        const submitButton =
+            leadForm.querySelector('button[type="submit"]');
 
-        const { error } = await saveLead({
-            lead_source: "Website",
+        /*
+         * Make sure the shared consent helper loaded correctly.
+         */
+        if (typeof window.getContactConsent !== "function") {
 
-            first_name: getValue("firstName"),
-            last_name: getValue("lastName"),
-            email: getValue("email"),
-            phone: getValue("phone"),
+            console.error(
+                "Consent helper is unavailable. " +
+                "Make sure consent.js loads before lead-form.js."
+            );
 
-            dob: getValue("dob"),
-            state: getValue("state"),
-            zip_code: getValue("zipCode"),
-            lead_type: getValue("leadType"),
+            alert(
+                "The form could not verify your contact permission. " +
+                "Please refresh the page and try again."
+            );
 
-            insurance_status: insuranceStatus,
-
-            current_company:
-                hasExistingInsurance
-                    ? getValue("currentCompany")
-                    : null,
-
-            current_premium:
-                hasExistingInsurance
-                    ? getValue("currentPremium")
-                    : null,
-
-            current_coverage:
-                hasExistingInsurance
-                    ? getValue("currentCoverage")
-                    : null,
-
-            years_with_policy:
-                hasExistingInsurance
-                    ? getValue("yearsWithPolicy")
-                    : null,
-
-            policy_type:
-                hasExistingInsurance
-                    ? getValue("policyType")
-                    : null,
-
-            review_reason:
-                hasExistingInsurance
-                    ? getValue("reviewReason")
-                    : null,
-
-            review_trigger:
-                hasExistingInsurance
-                    ? getValue("reviewTrigger")
-                    : null,
-
-            marital_status: getValue("maritalStatus"),
-            has_children: getValue("hasChildren"),
-            tobacco_use: getValue("tobaccoUse"),
-            contact_method: contactMethod,
-            best_contact_time: getValue("bestContactTime"),
-            comments: getValue("comments")
-        });
-
-        if (error) {
-            console.error("Supabase Error:", error);
-            alert("Error: " + error.message);
             return;
         }
 
-        alert("Lead saved successfully!");
+        /*
+         * Read the required homepage consent checkbox and
+         * create the consent information that will be saved.
+         */
+        const consent =
+            window.getContactConsent({
+                container: leadForm,
+                checkboxId: "contactConsent"
+            });
 
-        leadForm.reset();
+        if (!consent) {
 
-        document
-            .getElementById("existingFields")
-            ?.classList.add("hidden");
+            alert(
+                "Please agree to the contact permission " +
+                "before submitting."
+            );
+
+            return;
+        }
+
+        const fullName = getValue("fullName");
+
+        /*
+         * Split the full-name field so the form can continue
+         * using the existing first_name and last_name columns
+         * in Supabase.
+         */
+        const nameParts = fullName
+            ? fullName.split(/\s+/)
+            : [];
+
+        const firstName =
+            nameParts.shift() || null;
+
+        const lastName =
+            nameParts.length > 0
+                ? nameParts.join(" ")
+                : null;
+
+        /*
+         * Only disable the button after validation succeeds.
+         */
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+        }
+
+        try {
+
+            const { error } = await saveLead({
+
+                lead_source: "Website",
+
+                first_name: firstName,
+                last_name: lastName,
+
+                email: getValue("email"),
+                phone: getValue("phone"),
+                state: getValue("state"),
+                lead_type: getValue("leadType"),
+
+                /*
+                 * Adds:
+                 * contact_consent
+                 * contact_consent_version
+                 * contact_consent_text
+                 * contact_consent_page
+                 *
+                 * Supabase generates contact_consent_at.
+                 */
+                ...consent
+
+            });
+
+            if (error) {
+                throw error;
+            }
+
+            leadForm.reset();
+
+            if (successMessage) {
+
+                successMessage.classList.remove("hidden");
+
+                successMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Supabase lead form error:",
+                error
+            );
+
+            alert(
+                "We could not send your request. " +
+                "Please try again or contact Clay directly."
+            );
+
+        } finally {
+
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = "Request a Call";
+            }
+
+        }
+
     });
+
 }

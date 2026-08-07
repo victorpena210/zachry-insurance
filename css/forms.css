@@ -14,8 +14,10 @@ outline:none;
 }
 
 input:focus,
-select:focus{
-border-color:#c9a227;
+select:focus,
+textarea:focus{
+border-color:#806515;
+box-shadow:0 0 0 3px rgba(128,101,21,.2);
 }
 
 .contact-options{
@@ -49,7 +51,7 @@ opacity:.9;
 
 .submit-btn{
 background:#c9a227;
-color:white;
+color:#0f172a;
 border:none;
 padding:18px;
 font-size:1rem;
@@ -97,4 +99,48 @@ display:none;
 .application-section .lead-form {
     max-width: 900px;
     margin: 0 auto;
+}
+
+/* =========================
+CONTACT CONSENT
+========================= */
+
+.consent-group {
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+
+.consent-label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 12px;
+    color: #334155;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.consent-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 3px 0 0;
+    padding: 0;
+    flex-shrink: 0;
+    accent-color: #c9a227;
+}
+
+.consent-label a {
+    color: #0f274d;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.consent-note {
+    margin: 10px 0 0 32px;
+    color: #64748b;
+    font-size: 0.82rem;
+    line-height: 1.5;
 }

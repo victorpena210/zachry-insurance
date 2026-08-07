@@ -656,223 +656,119 @@
 
     <div class="quote-box">
 
-        <span class="section-tag">
-            FREE REVIEW
-        </span>
+<span class="section-tag">
+    GET STARTED
+</span>
 
-        <h2>
-            Request Your Complimentary Policy Review
-        </h2>
+<h2>
+    Talk With Clay About Life Insurance
+</h2>
 
-        <form id="leadForm">
-<input
-    id="firstName"
-    type="text"
-    placeholder="First Name"
-    required>
+<p>
+    Tell us how to reach you and what you need help with.
+    Clay will follow up to discuss your options.
+</p>
 
-<input
-    id="lastName"
-    type="text"
-    placeholder="Last Name"
-    required>
+<form id="leadForm">
 
-<input
-    id="email"
-    type="email"
-    placeholder="Email Address"
-    required>
+    <label for="fullName">
+        Full Name
+    </label>
 
-<input
-    id="phone"
-    type="tel"
-    placeholder="Phone Number"
-    required>
+    <input
+        id="fullName"
+        type="text"
+        placeholder="Your full name"
+        autocomplete="name"
+        maxlength="100"
+        required
+    >
 
-<label>Date of Birth</label>
+    <label for="email">
+        Email Address
+    </label>
 
-<input
-    id="dob"
-    type="date"
-    required>
+    <input
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        autocomplete="email"
+        maxlength="150"
+        required
+    >
 
-<input
-    id="state"
-    type="text"
-    placeholder="State of Residence"
-    required>
+    <label for="phone">
+        Phone Number
+    </label>
 
-<input
-    id="zipCode"
-    type="text"
-    placeholder="Zip Code"
-    required>
+    <input
+        id="phone"
+        type="tel"
+        placeholder="Phone number"
+        autocomplete="tel"
+        maxlength="25"
+        required
+    >
 
-<label>
-    How can we help you today?
-</label>
+    <label for="state">
+        State of Residence
+    </label>
 
-<select id="leadType" required>
-    <option value="">Select</option>
-    <option value="review">Free Policy Review</option>
-    <option value="quote">New Life Insurance Quote</option>
-</select>
-
-
-<label>Do you currently have life insurance?</label>
-
-<select id="insuranceStatus">
-    <option value="">Select</option>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-</select>
-
-
-<div id="existingFields" class="hidden">
-
-<input
-    id="currentCompany"
-    type="text"
-    placeholder="Current Insurance Company">
-
-<input
-    id="currentPremium"
-    type="number"
-    placeholder="Current Monthly Premium">
-
-<input
-    id="currentCoverage"
-    type="number"
-    placeholder="Coverage Amount">
-
-<input
-    id="yearsWithPolicy"
-    type="text"
-    placeholder="Years With Policy">
-
-    <label>Policy Type</label>
-
-    <select id="policyType">
-        <option value="">Select Policy Type</option>
-        <option>Term Life</option>
-        <option>Whole Life</option>
-        <option>Universal Life</option>
-        <option>Not Sure</option>
+    <select id="state" required>
+        <option value="">Select your state</option>
+        <option value="Alabama">Alabama</option>
+        <option value="Arkansas">Arkansas</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Indiana">Indiana</option>
+        <option value="Kentucky">Kentucky</option>
+        <option value="Louisiana">Louisiana</option>
+        <option value="Michigan">Michigan</option>
+        <option value="North Carolina">North Carolina</option>
+        <option value="Ohio">Ohio</option>
+        <option value="Pennsylvania">Pennsylvania</option>
+        <option value="South Carolina">South Carolina</option>
+        <option value="Tennessee">Tennessee</option>
+        <option value="Texas">Texas</option>
     </select>
 
-    <label>
-        What would you like us to review?
+    <label for="leadType">
+        How can Clay help you?
     </label>
 
-    <select id="reviewReason">
-        <option value="">Select</option>
-        <option>Lower My Premium</option>
-        <option>Increase Coverage</option>
-        <option>Review Beneficiaries</option>
-        <option>Compare Policies</option>
-        <option>Check If My Coverage Is Enough</option>
-        <option>General Policy Review</option>
+    <select id="leadType" required>
+        <option value="">Select a reason</option>
+
+        <option value="quote">
+            I need life insurance
+        </option>
+
+        <option value="review">
+            I want my current policy reviewed
+        </option>
     </select>
 
-    <label>
-        What prompted you to request a policy review today?
-    </label>
+<div class="consent-group">
 
-    <select id="reviewTrigger">
-        <option value="">Select</option>
-        <option>My Policy Is Old</option>
-        <option>My Family Situation Changed</option>
-        <option>I Think I'm Paying Too Much</option>
-        <option>I Don't Know If I Have Enough Coverage</option>
-        <option>I Was Referred By Someone</option>
-        <option>Other</option>
-    </select>
-
-</div>
-
-<label>Marital Status</label>
-
-<select id="maritalStatus">
-    <option value="">Select</option>
-    <option>Single</option>
-    <option>Married</option>
-    <option>Divorced</option>
-    <option>Widowed</option>
-</select>
-
-<label>Do You Have Children?</label>
-
-<select id="hasChildren">
-    <option value="">Select</option>
-    <option>Yes</option>
-    <option>No</option>
-</select>
-
-<label>Tobacco / Nicotine Use</label>
-
-<select id="tobaccoUse">
-    <option value="">Select</option>
-    <option>Yes</option>
-    <option>No</option>
-</select>
-
-<label>
-    Preferred Contact Method
-</label>
-
-<div class="contact-options">
-
-    <label>
-        <input
-            type="radio"
-            name="contactMethod"
-            value="call"
-            checked>
-        Call Me
-    </label>
-
-    <label>
-        <input
-            type="radio"
-            name="contactMethod"
-            value="email">
-        Email Me
-    </label>
-
-</div>
-
-<label>
-    Best Time To Contact You
-</label>
-
-<select id="bestContactTime">
-    <option value="">Select</option>
-    <option>Morning</option>
-    <option>Afternoon</option>
-    <option>Evening</option>
-</select>
-
-<textarea
-    id="comments"
-    rows="4"
-    placeholder="Additional Questions or Comments"></textarea>
-
-    <div class="consent-group">
-
-    <label class="consent-label">
+    <label
+        class="consent-label"
+        for="contactConsent"
+    >
 
         <input
             type="checkbox"
             id="contactConsent"
-            required>
+            required
+        >
 
-        <span>
-            I agree that Zachry Insurance may contact me by phone,
-            email, or text regarding this request. I have read the
+        <span data-consent-text>
+            I agree that Zachry Insurance may contact me by
+            phone, email, or text about this request. I have
+            read the
             <a
                 href="/privacy-policy"
                 target="_blank"
-                rel="noopener">
+                rel="noopener"
+            >
                 Privacy Policy
             </a>.
         </span>
@@ -880,30 +776,32 @@
     </label>
 
     <p class="consent-note">
-        Your information will be stored using our service providers
-        and used to respond to your request, review insurance options,
-        and maintain necessary business and compliance records.
+        This permission is for responding to this request.
+        It does not authorize automated or prerecorded
+        marketing calls or texts.
     </p>
 
 </div>
 
-<button
-    type="submit"
-    class="submit-btn">
+    <button
+        type="submit"
+        class="submit-btn"
+    >
+        Request a Call
+    </button>
 
-    Request Review
-
-</button>
 </form>
 
 
-        <div
-            id="success"
-            class="success hidden">
-
-            Thank you. Clay will contact you shortly.
-
-        </div>
+<div
+    id="success"
+    class="success hidden"
+    role="status"
+    aria-live="polite"
+>
+    Thank you. Your request has been received.
+    Clay will contact you shortly.
+</div>
 
     </div>
 
@@ -965,11 +863,14 @@
 
 <script src="/js/config.js"></script>
 
+<script src="/js/components/tabs.js"></script>
+
 <script src="/js/forms/saveLead.js"></script>
+
+<script src="/js/forms/consent.js"></script>
 
 <script src="/js/script.js"></script>
 
-<script src="/js/components/tabs.js"></script>
 
 <script src="/js/forms/lead-form.js"></script>
 

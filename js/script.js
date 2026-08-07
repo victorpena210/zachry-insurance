@@ -1,32 +1,4 @@
-// LIFE INSURANCE CONDITIONAL FIELDS
 
-const insuranceStatus =
-document.getElementById('insuranceStatus');
-
-const existingFields =
-document.getElementById('existingFields');
-
-if (insuranceStatus && existingFields) {
-
-    insuranceStatus.addEventListener(
-    'change',
-    function(){
-
-if (this.value === "yes") {
-    existingFields.classList.remove("hidden");
-} else {
-    existingFields.classList.add("hidden");
-
-    existingFields
-        .querySelectorAll("input, select")
-        .forEach((field) => {
-            field.value = "";
-        });
-}
-
-    });
-
-}
 
 // SMOOTH SCROLL
 
