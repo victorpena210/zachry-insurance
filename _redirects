@@ -9,10 +9,6 @@
 /careers.html  /careers  301!
 /texas-licensing.html  /texas-licensing  301!
 /day-in-the-life.html  /day-in-the-life  301!
-/life-insurance-agent-careers-texas.html  /life-insurance-agent-careers-texas  301!
-/life-insurance-agent-careers-austin.html  /life-insurance-agent-careers-austin  301!
-/part-time-life-insurance-agent-texas.html  /part-time-life-insurance-agent-texas  301!
-/insurance-agent-training-texas.html  /insurance-agent-training-texas  301!
 /agent-application.html  /agent-application  301!
 /privacy-policy.html  /privacy-policy  301!
 /term-life-insurance-austin.html  /term-life-insurance-austin  301!
@@ -23,12 +19,26 @@
 /share-your-experience.html  /share-your-experience  301!
 
 
+
+# =========================================================
+# CONSOLIDATED RECRUITING URLS -> CAREERS PILLAR
+# =========================================================
+
+/life-insurance-agent-careers-texas.html  /careers  301!
+/life-insurance-agent-careers-texas  /careers  301!
+/life-insurance-agent-careers-austin.html  /careers  301!
+/life-insurance-agent-careers-austin  /careers  301!
+/part-time-life-insurance-agent-texas.html  /careers  301!
+/part-time-life-insurance-agent-texas  /careers  301!
+/insurance-agent-training-texas.html  /careers  301!
+/insurance-agent-training-texas  /careers  301!
+/life-insurance-agent-careers-san-antonio.html  /careers  301!
+/life-insurance-agent-careers-san-antonio  /careers  301!
+
 # =========================================================
 # LEGACY URLS
 # =========================================================
 
-/life-insurance-agent-careers-san-antonio.html  /life-insurance-agent-careers-austin  301!
-/life-insurance-agent-careers-san-antonio  /life-insurance-agent-careers-austin  301!
 
 /whole-life-insurance-final-expense.html  /final-expense-insurance  301!
 /whole-life-insurance-final-expense  /final-expense-insurance  301!
@@ -44,10 +54,6 @@
 /careers  /careers.html  200
 /texas-licensing  /texas-licensing.html  200
 /day-in-the-life  /day-in-the-life.html  200
-/life-insurance-agent-careers-texas  /life-insurance-agent-careers-texas.html  200
-/life-insurance-agent-careers-austin  /life-insurance-agent-careers-austin.html  200
-/part-time-life-insurance-agent-texas  /part-time-life-insurance-agent-texas.html  200
-/insurance-agent-training-texas  /insurance-agent-training-texas.html  200
 /agent-application  /agent-application.html  200
 /privacy-policy  /privacy-policy.html  200
 /term-life-insurance-austin  /term-life-insurance-austin.html  200
