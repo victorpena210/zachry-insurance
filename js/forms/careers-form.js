@@ -35,6 +35,22 @@ function showCareerError(message) {
 }
 
 if (recruitingForm) {
+    let recruitingFormStarted = false;
+
+    const trackRecruitingFormStart = () => {
+        if (recruitingFormStarted) return;
+        recruitingFormStarted = true;
+
+        window.trackGaEvent?.("lead_form_start", {
+            form_name: "career_interest_form",
+            lead_source: getRecruitingLeadSource(),
+            page_path: window.location.pathname
+        });
+    };
+
+    recruitingForm.addEventListener("input", trackRecruitingFormStart);
+    recruitingForm.addEventListener("change", trackRecruitingFormStart);
+
     recruitingForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
@@ -112,6 +128,13 @@ if (recruitingForm) {
             if (error) {
                 throw error;
             }
+
+            window.trackGaEvent?.("generate_lead", {
+                lead_source: getRecruitingLeadSource(),
+                form_name: "career_interest_form",
+                lead_type: "Recruiting",
+                page_path: window.location.pathname
+            });
 
             recruitingForm.reset();
 

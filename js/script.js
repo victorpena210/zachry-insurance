@@ -205,3 +205,26 @@ document
     });
 
 
+
+
+// ============================
+// SCHEDULING / CALENDLY CLICKS
+// ============================
+
+document
+    .querySelectorAll('a[href*="calendly.com"]')
+    .forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            window.trackGaEvent(
+                "schedule_consultation_click",
+                {
+                    page_path: window.location.pathname,
+                    link_text: this.textContent.trim()
+                }
+            );
+
+        });
+
+    });

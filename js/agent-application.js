@@ -9,6 +9,22 @@ const applicationMessage =
     document.getElementById("applicationMessage");
 
 if (agentApplicationForm) {
+    let agentApplicationStarted = false;
+
+    const trackAgentApplicationStart = () => {
+        if (agentApplicationStarted) return;
+        agentApplicationStarted = true;
+
+        window.trackGaEvent?.("lead_form_start", {
+            form_name: "agent_application_form",
+            lead_source: "Post-call Agent Application",
+            page_path: window.location.pathname
+        });
+    };
+
+    agentApplicationForm.addEventListener("input", trackAgentApplicationStart);
+    agentApplicationForm.addEventListener("change", trackAgentApplicationStart);
+
     agentApplicationForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
@@ -96,6 +112,13 @@ if (agentApplicationForm) {
             if (error) {
                 throw error;
             }
+
+            window.trackGaEvent?.("generate_lead", {
+                lead_source: "Post-call Agent Application",
+                form_name: "agent_application_form",
+                lead_type: "Recruiting",
+                page_path: window.location.pathname
+            });
 
             applicationMessage.textContent =
                 "Application submitted successfully. Clay will review it and follow up with you.";

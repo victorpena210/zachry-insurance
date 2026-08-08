@@ -264,3 +264,17 @@ SPRINT 4 RESPONSIVE
         padding:24px;
     }
 }
+
+
+@media (max-width: 600px) {
+    .testimonial-submit-section{
+        padding:60px 0;
+    }
+    .testimonial-submit-card{
+        padding:26px 20px;
+        border-radius:18px;
+    }
+    .client-testimonial-card{
+        padding:26px;
+    }
+}

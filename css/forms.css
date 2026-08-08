@@ -5,12 +5,24 @@ gap:18px;
 }
 
 input,
-select{
+select,
+textarea{
 padding:16px;
 border:1px solid #d1d5db;
 border-radius:10px;
+font-family:inherit;
 font-size:1rem;
 outline:none;
+}
+
+textarea{
+resize:vertical;
+min-height:120px;
+}
+
+form > label{
+font-weight:700;
+color:#334155;
 }
 
 input:focus,
@@ -63,6 +75,13 @@ transition:.3s;
 
 .submit-btn:hover{
 transform:translateY(-2px);
+}
+
+.submit-btn:disabled,
+.primary-btn:disabled{
+opacity:.65;
+cursor:not-allowed;
+transform:none;
 }
 
 .success{

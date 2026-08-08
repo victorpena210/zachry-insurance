@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWT81WK31K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TWT81WK31K');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" sizes="32x32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <title>Share Your Experience | Zachry Insurance</title>
+    <meta name="description" content="Share feedback about your experience with Zachry Insurance for review before possible publication on the website.">
+    <link rel="canonical" href="https://zachryinsurance.com/share-your-experience">
+    <meta name="robots" content="noindex, follow">
+</head>
+<body>
+<nav aria-label="Primary">
+    <div class="container nav-container">
+        <a href="/" class="logo">
+            <img src="/images/branding/zachry_insurance_logo_main.webp" alt="Zachry Insurance Logo" width="400" height="155">
+        </a>
+        <div class="nav-actions">
+            <a href="https://calendly.com/clay-christian-zachry/30min" target="_blank" rel="noopener" class="schedule-btn">Schedule Consultation</a>
+            <div class="menu-wrapper">
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dropdownMenu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="/">Home</a>
+                    <a href="/about-clay-zachry">About Clay</a>
+                    <a href="/team">Our Team</a>
+                    <a href="/#quote">Free Policy Review</a>
+                    <a href="/careers">Careers</a>
+                    <a href="tel:+12102557475">Call&nbsp;Clay&nbsp;Today</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section class="testimonial-submit-section">
+        <div class="container">
+            <div class="testimonial-submit-card">
+                <div class="section-header">
+                    <span class="section-tag">SHARE YOUR EXPERIENCE</span>
+                    <h1>Tell Us How We Did</h1>
+                    <p>Your feedback is submitted privately for review. It will not appear on the website unless you give permission and Zachry Insurance approves it.</p>
+                </div>
+
+                <form id="testimonialForm">
+                    <label for="testimonialName">Name as you would like it displayed</label>
+                    <input id="testimonialName" name="display_name" type="text" autocomplete="name" maxlength="100" placeholder="Example: Maria R." required>
+
+                    <label for="testimonialEmail">Email Address</label>
+                    <input id="testimonialEmail" name="email" type="email" autocomplete="email" maxlength="150" placeholder="you@example.com" aria-describedby="testimonialEmailNote" required>
+                    <p id="testimonialEmailNote" class="field-note">Your email is used for submission records and will not be displayed with the testimonial.</p>
+
+                    <label for="testimonialText">Your Experience</label>
+                    <textarea id="testimonialText" name="testimonial" rows="7" maxlength="1500" placeholder="Tell us about your experience with Zachry Insurance." required></textarea>
+                    <p class="field-note">Please do not include medical details, policy numbers, Social Security numbers, payment information, or other sensitive information.</p>
+
+                    <div class="consent-group">
+                        <label class="consent-label" for="testimonialPermission">
+                            <input type="checkbox" id="testimonialPermission" required>
+                            <span id="testimonialPermissionText">I give Zachry Insurance permission to review this testimonial and, if approved, publish my display name and testimonial on zachryinsurance.com.</span>
+                        </label>
+                        <p class="consent-note">Submitting feedback does not guarantee that it will be published. You may request removal of a published testimonial by contacting Zachry Insurance.</p>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Testimonial</button>
+                </form>
+
+                <div id="testimonialSuccess" class="success hidden" role="status" aria-live="polite">
+                    Thank you. Your testimonial was submitted for review and is not public yet.
+                </div>
+
+                <div id="testimonialError" class="form-error hidden" role="alert" aria-live="assertive">
+                    We could not submit your testimonial. Please try again or contact Zachry Insurance.
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p><strong>Zachry Insurance</strong></p>
+        <p>Based in Austin, Texas and serving families across Texas.</p>
+        <address class="footer-contact">
+            <p>Phone: <a href="tel:+12102557475">(210) 255-7475</a></p>
+            <p>Email: <a href="mailto:clay@zachryinsurance.com">clay@zachryinsurance.com</a></p>
+        </address>
+        <p class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <span aria-hidden="true">•</span>
+            <a href="mailto:privacy@zachryinsurance.com">Privacy Requests</a>
+        </p>
+        <p>&copy; 2026 Zachry Insurance. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/config.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/testimonial-submit.js"></script>
+</body>
+</html>

@@ -1601,6 +1601,12 @@ font-size:.95rem;
 color:#cbd5e1;
 }
 
+.agent-contact-card a{
+color:#f8e7a7;
+font-weight:700;
+text-underline-offset:3px;
+}
+
 .contact-coming-soon{
 color:#f8e7a7;
 }
@@ -1610,4 +1616,73 @@ display:inline-block;
 color:#ffffff;
 font-weight:700;
 text-underline-offset:4px;
+}
+
+
+/* =======================
+CLIENT TESTIMONIALS
+======================= */
+
+.client-testimonials-section{
+background:#ffffff;
+}
+
+.client-testimonials-section .section-header p{
+max-width:760px;
+margin:12px auto 0;
+color:#64748b;
+}
+
+.client-testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+margin-top:35px;
+}
+
+.client-testimonial-card{
+background:#0f172a;
+color:#ffffff;
+border-radius:20px;
+padding:32px;
+box-shadow:0 14px 32px rgba(15,23,42,.12);
+}
+
+.client-testimonial-card blockquote{
+font-family:'Playfair Display',serif;
+font-size:1.3rem;
+line-height:1.6;
+margin:0 0 22px;
+}
+
+.client-testimonial-name{
+color:#f8e7a7;
+font-weight:800;
+margin:0;
+}
+
+.testimonial-submit-section{
+background:#f8fafc;
+padding:90px 0;
+}
+
+.testimonial-submit-card{
+max-width:780px;
+margin:0 auto;
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:24px;
+padding:42px;
+box-shadow:0 18px 45px rgba(15,23,42,.09);
+}
+
+.testimonial-submit-card .section-header{
+margin-bottom:34px;
+}
+
+.field-note{
+margin:-10px 0 0;
+color:#64748b;
+font-size:.86rem;
+line-height:1.5;
 }
